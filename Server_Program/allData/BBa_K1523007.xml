@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>31741</part_id>
+<part_name>BBa_K1523007</part_name>
+<part_short_name>K1523007</part_short_name>
+<part_short_desc>A Device to reduce Cr(VI)</part_short_desc>
+<part_type>Device</part_type>
+<release_status>Not Released</release_status>
+<sample_status>In stock</sample_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K1523007</part_url>
+<part_entered>2014-04-19</part_entered>
+<part_author>Haotian Wang</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>tttacagctagctcagtcctaggtattatgctagc
+</seq_data></sequences>
+<features>
+<feature>
+<id>2372532</id>
+<title>BBa_J23101</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>35</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_J23101</twin>
+<twin>BBa_J24822</twin>
+<twin>BBa_J24823</twin>
+<twin>BBa_K823005</twin>
+<twin>BBa_K783039</twin>
+<twin>BBa_K1059016</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

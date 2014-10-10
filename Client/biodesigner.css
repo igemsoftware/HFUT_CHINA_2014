@@ -1,0 +1,183 @@
+QLabel[biobrick=true]{
+	border-width: 0px;
+	border-radius: 2px;
+	background-color: #4A90E2;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 18px;
+        width: 100px;
+	height: 29px;
+	text-align: center;
+}
+
+QLabel[biobrickName=true]{
+	border-width: 0px;
+	border-radius: 2px;
+	background-color: rgba(0, 0, 0, 0);
+	color: #111;
+	font-family: Helvetica;
+	font-size: 18px;
+	width: 167px;
+	height: 29px;
+	text-align: center;
+}
+
+QLabel[recommendBioBrick=true]{
+	border-width: 0px;
+	border-radius: 2px;
+	background-color:rgba(216, 216, 216, 50);
+	color:#111;
+	font-family: Helvetica;
+	font-size: 18px;
+	text-align: center;
+}
+
+QLabel[chosenReommendBioBrick=true]{
+	border-width: 0px;
+	border-radius: 2px;
+	background-color:#C1C0C0;
+	color:#111;
+	font-family: Helvetica;
+	font-size: 18px;
+	text-align: center;
+}
+
+QLabel[usedRecommendBioBrick=true]{
+	border-width: 0px;
+	border-radius: 2px;
+	background-color:rgba(216, 216, 216, 20);
+	color:#111;
+	font-family: Helvetica;
+	font-size: 18px;
+	text-align: center;
+}
+QLabel[biobrickImage=true]{
+	border-width: 0px;
+	text-align: center;
+}
+
+
+QLabel[partinfo=true]{
+	border-width: 0px;
+	border-radius: 1px;
+	background-color: #ccc;
+	font-size: 15px;
+	margin:0px, 0px, 0px, 0px;
+	padding:5px, 5px, 5px, 5px;
+}
+
+QLineEdit{
+	border-width: 1px;
+	background-color: #FFF;
+	color: #000;
+	font-family: Helvetica;
+	font-size: 14px;
+	width: 229px;
+	height: 36px;
+}
+
+QFrame[top=true]{
+    background:qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop: 0 #F7F3F3, stop: 1 #DAD5D5);
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+    border-width: 1px;
+border-color: #111;
+}
+
+QFrame[midleft=true]{
+        background-color: #EAF6F6;
+        padding-top: 0px;
+}
+
+QFrame[midright=true]{
+	background-color: #D8D8D8;
+}
+
+QLayout[bottomup=true]{
+	background-color: #EDEDED;
+}
+
+QLayout[bottomdown=true]{
+	background-color: #FFF;
+}
+
+QPushButton[saveButton=true]{
+	width: 60;
+	height:40;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 3px;
+	border-width: 0px;
+	color:#444;
+	font-style: italic;
+	font-weight: lighter;
+	font-size:16pt;
+}
+QPushButton[saveButton=true]:hover{
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18pt;
+    color:#4A90E2;
+}
+
+
+QPushButton[exportButton=true]{
+        width: 60px;
+        height:40px;
+    background-color: rgba(0, 0, 0, 0);
+	border-radius: 3px;
+	border-width: 0px;
+	color:#444;
+	font-style: italic;
+	font-size:16pt;
+	font-weight: lighter;
+}
+
+QPushButton[exportButton=true]:hover{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    border-width: 0px;
+    color:#444;
+    font-style: italic;
+    font-size:16pt;
+    font-weight: lighter;
+    font-size: 18pt;
+    color:#4A90E2;
+}
+
+
+
+BioBrickListView{
+    background-color: #EAF6F6;
+    border-width: 1px;
+	border-color: #111;
+    border-color:#EAF6F6;
+    border-radius:2px;
+}
+
+DesignPanel{
+    background-color: #fff;
+    border-width: 1px;
+	border-color: #111;
+    border-radius:2px;
+    vertical-align: center;
+    padding-top: 120px;
+
+}
+
+QLabel[titleLabel=true]{
+	background-color:#EDEDED;
+	font-family: Helvetica;
+	font-size: 20px;
+	border-width: 1px;
+	border-color: #111;
+}
+
+QListWidget[bottom=true]{
+border-width:0px;
+border-radius:2px;
+margin-left: 5px;
+margin-right: 5px;
+border-width: 1px;
+border-color: #111;
+}

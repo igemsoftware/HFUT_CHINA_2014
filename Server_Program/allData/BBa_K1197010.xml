@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>31061</part_id>
+<part_name>BBa_K1197010</part_name>
+<part_short_name>K1197010</part_short_name>
+<part_short_desc>Pveg (K143012) + RBS (SpoVG) + RFP + DT</part_short_desc>
+<part_type>Composite</part_type>
+<release_status>Not Released</release_status>
+<sample_status>It&apos;s complicated</sample_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K1197010</part_url>
+<part_entered>2013-09-22</part_entered>
+<part_author>Emre &amp;#304;lpars</part_author>
+<deep_subparts>
+<subpart>
+<part_id>11790</part_id>
+<part_name>BBa_K143012</part_name>
+<part_short_desc>Promoter veg  a constitutive promoter for B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>11817</part_id>
+<part_name>BBa_K143021</part_name>
+<part_short_desc>SpoVG ribosome binding site (RBS) for B. subtilis</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname>RBS-spoVG</part_nickname></subpart>
+<subpart>
+<part_id>4932</part_id>
+<part_name>BBa_E1010</part_name>
+<part_short_desc> **highly** engineered mutant of red fluorescent protein from Discosoma striata (coral)</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>mRFP1</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>11790</part_id>
+<part_name>BBa_K143012</part_name>
+<part_short_desc>Promoter veg  a constitutive promoter for B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<subpart>
+<part_id>21707</part_id>
+<part_name>BBa_K606013</part_name>
+<part_short_desc>SpoVG RFPmCherry double terminator. Translational unit for B. Subtilis</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>11790</part_id>
+<part_name>BBa_K143012</part_name>
+<part_short_desc>Promoter veg  a constitutive promoter for B. subtilis</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>Pveg</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>21707</part_id>
+<part_name>BBa_K606013</part_name>
+<part_short_desc>SpoVG RFPmCherry double terminator. Translational unit for B. Subtilis</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aattttgtcaaaataattttattgacaacgtcttattaacgttgatataatttaaattttatttgacaaaaatgggctcg
+tgttgtacaataaatgttactagagaaaggtggtgaatactagatggcttcctccgaagacgttatcaaagagttcatgc
+gtttcaaagttcgtatggaaggttccgttaacggtcacgagttcgaaatcgaaggtgaaggtgaaggtcgtccgtacgaa
+ggtacccagaccgctaaactgaaagttaccaaaggtggtccgctgccgttcgcttgggacatcctgtccccgcagttcca
+gtacggttccaaagcttacgttaaacacccggctgacatcccggactacctgaaactgtccttcccggaaggtttcaaat
+gggaacgtgttatgaacttcgaagacggtggtgttgttaccgttacccaggactcctccctgcaagacggtgagttcatc
+tacaaagttaaactgcgtggtaccaacttcccgtccgacggtccggttatgcagaaaaaaaccatgggttgggaagcttc
+caccgaacgtatgtacccggaagacggtgctctgaaaggtgaaatcaaaatgcgtctgaaactgaaagacggtggtcact
+acgacgctgaagttaaaaccacctacatggctaaaaaaccggttcagctgccgggtgcttacaaaaccgacatcaaactg
+gacatcacctcccacaacgaagactacaccatcgttgaacagtacgaacgtgctgaaggtcgtcactccaccggtgctta
+ataacgctgatagtgctagtgtagatcgctactagagccaggcatcaaataaaacgaaaggctcagtcgaaagactgggc
+ctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcg
+tttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2358047</id>
+<title>BBa_K143012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>97</endpos></feature>
+<feature>
+<id>2358045</id>
+<title>Sigma A-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>63</startpos>
+<endpos>68</endpos></feature>
+<feature>
+<id>2358046</id>
+<title>Sigma A -10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>86</startpos>
+<endpos>91</endpos></feature>
+<feature>
+<id>2358061</id>
+<title>BBa_K606013</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2358049</id>
+<title>BBa_K143021</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>106</startpos>
+<endpos>117</endpos></feature>
+<feature>
+<id>2358048</id>
+<title></title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>106</startpos>
+<endpos>117</endpos></feature>
+<feature>
+<id>2358050</id>
+<title>BBa_K606012</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>124</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2358051</id>
+<title>mrfp1</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>124</startpos>
+<endpos>798</endpos></feature>
+<feature>
+<id>2358052</id>
+<title>BBa_E1010</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>124</startpos>
+<endpos>804</endpos></feature>
+<feature>
+<id>2358053</id>
+<title>barcode</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>805</startpos>
+<endpos>829</endpos></feature>
+<feature>
+<id>2358055</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>838</startpos>
+<endpos>917</endpos></feature>
+<feature>
+<id>2358054</id>
+<title>BBa_B0015</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>838</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2358056</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>849</startpos>
+<endpos>892</endpos></feature>
+<feature>
+<id>2358057</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>926</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2358058</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>933</startpos>
+<endpos>952</endpos></feature>
+<feature>
+<id>2358059</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>953</startpos>
+<endpos>966</endpos></feature>
+<feature>
+<id>2358060</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>959</startpos>
+<endpos>959</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_K606030</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

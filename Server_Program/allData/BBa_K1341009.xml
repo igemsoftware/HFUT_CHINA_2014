@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>33057</part_id>
+<part_name>BBa_K1341009</part_name>
+<part_short_name>K1341009</part_short_name>
+<part_short_desc>GFP that can switch logic gate promoter</part_short_desc>
+<part_type>Composite</part_type>
+<release_status>Not Released</release_status>
+<sample_status>In stock</sample_status>
+<part_results></part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K1341009</part_url>
+<part_entered>2014-10-02</part_entered>
+<part_author>Run-ze Zhang</part_author>
+<deep_subparts>
+<subpart>
+<part_id>12627</part_id>
+<part_name>BBa_K121016</part_name>
+<part_short_desc>Tokyo Standard prefix suffix RBS</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>12627</part_id>
+<part_name>BBa_K121016</part_name>
+<part_short_desc>Tokyo Standard prefix suffix RBS</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>12627</part_id>
+<part_name>BBa_K121016</part_name>
+<part_short_desc>Tokyo Standard prefix suffix RBS</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>5309</part_id>
+<part_name>BBa_E0040</part_name>
+<part_short_desc> green fluorescent protein derived from jellyfish Aequeora victoria wild-type GFP (SwissProt: P42212</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>GFP</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>603</part_id>
+<part_name>BBa_B0010</part_name>
+<part_short_desc>T1 from E. coli rrnB</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>145</part_id>
+<part_name>BBa_B0012</part_name>
+<part_short_desc>TE from coliphageT7</part_short_desc>
+<part_type>Terminator</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gtcgactgacgactggatcctgtcggagatctgtcggataacgcgtgagattaaagaggagaaatactagatgcgtaaag
+gagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagt
+ggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatg
+gccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttt
+tcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgct
+gaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattct
+tggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagtta
+acttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgat
+ggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagacca
+catggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaataataatactagagcc
+aggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctcta
+ctagagtcacactggctcaccttcgggtgggcctttctgcgtttata
+</seq_data></sequences>
+<features>
+<feature>
+<id>2392013</id>
+<title>Sal I</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>6</endpos></feature>
+<feature>
+<id>2392014</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2392019</id>
+<title>BBa_K121016</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>2392015</id>
+<title>Bam HI</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>15</startpos>
+<endpos>20</endpos></feature>
+<feature>
+<id>2392016</id>
+<title>Bgl II</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>26</startpos>
+<endpos>31</endpos></feature>
+<feature>
+<id>2392017</id>
+<title>Mlu I</title>
+<type>tag</type>
+<direction>forward</direction>
+<startpos>41</startpos>
+<endpos>46</endpos></feature>
+<feature>
+<id>2392018</id>
+<title>B0030</title>
+<type>rbs</type>
+<direction>forward</direction>
+<startpos>50</startpos>
+<endpos>64</endpos></feature>
+<feature>
+<id>2392021</id>
+<title>BBa_E0040</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>71</startpos>
+<endpos>790</endpos></feature>
+<feature>
+<id>2392020</id>
+<title>GFP protein</title>
+<type>protein</type>
+<direction>forward</direction>
+<startpos>71</startpos>
+<endpos>790</endpos></feature>
+<feature>
+<id>2392022</id>
+<title>BBa_B0010</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>799</startpos>
+<endpos>878</endpos></feature>
+<feature>
+<id>2392023</id>
+<title></title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>810</startpos>
+<endpos>853</endpos></feature>
+<feature>
+<id>2392024</id>
+<title>BBa_B0012</title>
+<type>BioBrick</type>
+<direction>forward</direction>
+<startpos>887</startpos>
+<endpos>927</endpos></feature>
+<feature>
+<id>2392025</id>
+<title>T7 TE</title>
+<type>stem_loop</type>
+<direction>forward</direction>
+<startpos>894</startpos>
+<endpos>913</endpos></feature>
+<feature>
+<id>2392026</id>
+<title></title>
+<type>polya</type>
+<direction>forward</direction>
+<startpos>914</startpos>
+<endpos>927</endpos></feature>
+<feature>
+<id>2392027</id>
+<title></title>
+<type>stop</type>
+<direction>forward</direction>
+<startpos>920</startpos>
+<endpos>920</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_J54103</twin>
+<twin>BBa_K121017</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

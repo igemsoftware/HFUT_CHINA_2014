@@ -1,0 +1,49 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/BioDesigner</property>
+		
+		<property name="hibernate.connection.username">root</property>
+		
+		<property name="hibernate.connection.password">x</property>
+		
+		<property name="hibernate.connection.pool_size">5</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		
+		<property name="hibernate.format_sql">true</property>
+		
+		<property name="hibernate.hbm2ddl.auto">true</property>
+		
+		
+		
+
+		<mapping resource="com/sanmixy/model/Part.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/Device.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/RecentlyUsedPart.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/Twins.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/HeadPart.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/DoublePartCir.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/TriplePartCir.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/QuadraPartCir.hbm.xml"/>
+		
+		<mapping resource="com/sanmixy/model/PentaPartCir.hbm.xml"/>
+		
+		
+	</session-factory>
+</hibernate-configuration>

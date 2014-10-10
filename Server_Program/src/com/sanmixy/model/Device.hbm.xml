@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.sanmixy.model">
+	
+	<class name="Device"
+		   table="DEVICE"
+		   dynamic-insert="true"
+		   dynamic-update="true"
+		   lazy="true">
+	
+		<id name="id"
+			column="ID"
+			type="integer">
+			
+			<generator class="native"/>
+			
+		</id>	
+		
+		<many-to-one name="device"
+					 class="Part"
+					 column="PARTID"
+					 unique="true"
+					 not-null="true"
+					 cascade="all"
+					 />
+					 
+		<property name="part_seq"
+				  column="PARTSEQ"
+				  type="string"
+				  not-null="true"
+				  unique="true"
+				  />
+					 
+	</class>
+</hibernate-mapping>

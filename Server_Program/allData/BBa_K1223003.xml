@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>29164</part_id>
+<part_name>BBa_K1223003</part_name>
+<part_short_name>K1223003</part_short_name>
+<part_short_desc>Kanamicin ressistance</part_short_desc>
+<part_type>Translational_Unit</part_type>
+<release_status>Not Released</release_status>
+<sample_status>In stock</sample_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K1223003</part_url>
+<part_entered>2013-09-07</part_entered>
+<part_author>Orr Schlesinger</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>ctgatccttcaactcagcaaaagttcgatttattcaacaaagccacgttgtgtctcaaaatctctgatgttacattgcac
+aagataaaaatatatcatcatgaacaataaaactgtctgcttacataaacagtaatacaaggggtgttatgagccatatt
+caacgggaaacgtcttgctcccgtccgcgcttaaactccaacatggacgctgatttatatgggtataaatgggctcgcga
+taatgtcgggcaatcaggtgcgacaatctatcgcttgtatgggaagcccgatgcgccagagttgtttctgaaacatggca
+aaggtagcgttgccaatgatgttacagatgagatggtccgtctcaactggctgacggagtttatgcctctcccgaccatc
+aagcattttatccgtactcctgatgatgcgtggttactcaccaccgcgattcctgggaaaacagccttccaggtattaga
+agaatatcctgattcaggtgaaaatattgttgatgcgctggccgtgttcctgcgccggttacattcgattcctgtttgta
+attgtccttttaacagcgatcgtgtatttcgtcttgctcaggcgcaatcacgcatgaataacggtttggttgatgcgagt
+gattttgatgacgagcgtaatggctggcctgttgaacaagtctggaaagaaatgcacaagctcttgccattctcaccgga
+ttcagtcgtcactcatggtgatttctcacttgataaccttatttttgacgaggggaaattaataggttgtattgatgttg
+gacgggtcggaatcgcagaccgttaccaggaccttgccattctttggaactgcctcggtgagttttctccttcattacag
+aaacggctttttcaaaaatatggtattgataatcctgatatgaataaattgcagtttcatttgatgctcgatgagttttt
+ctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2335259</id>
+<title>KanR CDS</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>149</startpos>
+<endpos>967</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_P1003</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

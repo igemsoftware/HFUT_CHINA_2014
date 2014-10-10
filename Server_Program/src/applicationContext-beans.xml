@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	
+	<bean id="partDao" class="com.sanmixy.daoImpl.PartDaoImpl">
+	
+		<property name="sessionFactory" ref="sessionFactory"/>
+		
+	</bean>
+	
+	<bean id="deviceDao" class="com.sanmixy.daoImpl.DeviceDaoImpl">
+	
+		<property name="sessionFactory" ref="sessionFactory"/>
+		
+	</bean>
+	
+	<bean id="doublePartCirDao" class="com.sanmixy.daoImpl.DoublePartCirDaoImpl">
+	
+		<property name="sessionFactory" ref="sessionFactory"/>
+		 
+	</bean>
+
+	<bean id="triplePartCirDao" class="com.sanmixy.daoImpl.TriplePartCirDaoImpl">
+		
+		<property name="sessionFactory" ref="sessionFactory"/>
+	
+	</bean>
+	
+	<bean id="quadraPartCirDao" class="com.sanmixy.daoImpl.QuadraPartCirDaoImpl">
+		
+		<property name="sessionFactory" ref="sessionFactory"/>
+	
+	</bean>
+	
+	<bean id="pentaPartCirDao" class="com.sanmixy.daoImpl.PentaPartCirDaoImpl">
+	
+		<property name="sessionFactory" ref="sessionFactory"/>
+		
+	</bean>
+	
+	<bean id="headPartDao" class="com.sanmixy.daoImpl.HeadPartDaoImpl">
+	
+		<property name="sessionFactory" ref="sessionFactory"/>
+		
+	</bean>
+	
+	<bean id="recentlyUsedPartDao" class="com.sanmixy.daoImpl.RecentlyUsedPartDaoImpl">
+	
+		<property name="sessionFactory" ref="sessionFactory"/>
+		
+	</bean>
+	
+	<bean id="twinsPartDao" class="com.sanmixy.daoImpl.TwinsPartDaoImpl">
+		
+		<property name="sessionFactory" ref="sessionFactory"/>
+		
+	</bean>
+</beans>

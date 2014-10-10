@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>15698</part_id>
+<part_name>BBa_K283028</part_name>
+<part_short_name>K283028</part_short_name>
+<part_short_desc>pAraC-rbs</part_short_desc>
+<part_type>Intermediate</part_type>
+<release_status>Not Released</release_status>
+<sample_status>It&apos;s complicated</sample_status>
+<part_results>None</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K283028</part_url>
+<part_entered>2009-10-13</part_entered>
+<part_author>Shi Lei, W Ling , Nelson Chu</part_author>
+<deep_subparts>
+<subpart>
+<part_id>3923</part_id>
+<part_name>BBa_R0080</part_name>
+<part_short_desc>Promoter (AraC regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>AraC</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>3923</part_id>
+<part_name>BBa_R0080</part_name>
+<part_short_desc>Promoter (AraC regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>AraC</part_nickname></subpart>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>3923</part_id>
+<part_name>BBa_R0080</part_name>
+<part_short_desc>Promoter (AraC regulated)</part_short_desc>
+<part_type>Regulatory</part_type>
+<part_nickname>AraC</part_nickname></subpart>
+<scar>
+<scar_id>1</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10]</scar_name>
+<scar_nickname>[10]</scar_nickname>
+<scar_comments></scar_comments>
+<scar_sequence>tactagag</scar_sequence></scar>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>gcgtaacaaaagtgtctataatcacggcagaaaagtccacattgattatttgcacggcgtcacactttgctatgccatag
+catttttatccataagattagcggatcctacctgacgctttttatcgcaactctctactgtttctccattactagagaaa
+gaggagaaa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2035758</id>
+<title>BBa_R0080</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>149</endpos></feature>
+<feature>
+<id>2035752</id>
+<title>c-amp2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>4</startpos>
+<endpos>29</endpos></feature>
+<feature>
+<id>2035753</id>
+<title>araO1</title>
+<type>operator</type>
+<direction>forward</direction>
+<startpos>6</startpos>
+<endpos>44</endpos></feature>
+<feature>
+<id>2035754</id>
+<title>c-amp1</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>43</startpos>
+<endpos>72</endpos></feature>
+<feature>
+<id>2035755</id>
+<title>ara1 and ara2</title>
+<type>binding</type>
+<direction>forward</direction>
+<startpos>73</startpos>
+<endpos>101</endpos></feature>
+<feature>
+<id>2035756</id>
+<title>-35</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>113</startpos>
+<endpos>118</endpos></feature>
+<feature>
+<id>2035757</id>
+<title>-10</title>
+<type>promoter</type>
+<direction>forward</direction>
+<startpos>136</startpos>
+<endpos>141</endpos></feature>
+<feature>
+<id>2035760</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>158</startpos>
+<endpos>169</endpos></feature>
+<feature>
+<id>2035759</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>162</startpos>
+<endpos>165</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_K115010</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

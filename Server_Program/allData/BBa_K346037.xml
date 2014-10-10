@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>19533</part_id>
+<part_name>BBa_K346037</part_name>
+<part_short_name>K346037</part_short_name>
+<part_short_desc>T3 promoter drived amplifier+Agn43</part_short_desc>
+<part_type>Generator</part_type>
+<release_status>Not Released</release_status>
+<sample_status>It&apos;s complicated</sample_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K346037</part_url>
+<part_entered>2010-10-15</part_entered>
+<part_author>miao jing</part_author>
+<deep_subparts></deep_subparts>
+<specified_subparts></specified_subparts>
+<specified_subscars></specified_subscars>
+<sequences>
+<seq_data>atgaaacgacatctgaatacctgctacaggctggtatggaatcacatgacgggcgctttcgtggttgcctccgaactggc
+ccgcgcacggggtaaacgtggcggtgtggcggttgcactgtctcttgccgcagtcacgtcactcccggtgctggctgctg
+acatcgttgtgcacccgggagaaaccgtgaacggcggaacactggcaaatcatgacaaccagattgtcttcggtacgacc
+aacggaatgaccatcagtaccgggctggagtatgggccggataacgaggccaataccggcgggcaatgggtacaggatgg
+cggaacagccaacaaaacgactgtcaccagtggtggtcttcagagagtgaaccccggtggaagtgtctcagacacggtta
+tcagtgccggaggcggacagagccttcagggacgggctgtgaacaccacgctgaatggtggcgaacagtggatgcatgag
+ggggcgatagccacaggaaccgtcattaatgataagggctggcaggtcgtcaagcccggtacagtggcaacggataccgt
+tgttaataccggggcggaagggggaccggatgcagaaaacggtgataccgggcagtttgttcgcggggatgccgtacgca
+caaccatcaataaaaacggtcgccagattgtgagagctgaaggaacggcaaataccactgtggtttatgccggcggcgac
+cagactgtacatggtcacgcactggataccacgctgaatgggggataccagtatgtgcacaacggcggtacagcgtctga
+cactgttgtgaacagtgacggctggcagattgtcaaaaacgggggtgtggccgggaataccaccgttaatcagaagggca
+gactgcaagtggacgccggtggtacagccacgaatgtcaccctgaagcagggcggcgcactggttaccagtacggctgca
+accgttaccggcataaaccgcctgggagcattctctgttgtggagggtaaagctgataatgtcgtactggaaaatggcgg
+acgcctggatgtgctgaccggacacacagccactaatacccgcgtggatgatggcggaacgctggatgtccgcaacggtg
+gcaccgccaccaccgtatccatgggaaatggcggtgtactgctggccgattccggtgccgctgtcagtggtacccggagc
+gacggaaaggcattcagtatcggaggcggtcaggcggatgccctgatgctggaaaaaggcagttcattcacgctgaacgc
+cggtgatacggccacggataccacggtaaatggcggactgttcaccgccaggggcggcacactggcgggcaccaccacgc
+tgaataacggcgccatacttaccctttccgggaagacggtgaacaacgataccctgaccatccgtgaaggcgatgcactc
+ctgcaaggaggctctctcaccggtaacggcagcgtggaaaaatcaggaagtggcacactcactgtcagcaacaccacact
+cacccagaaagccgtcaacctgaatgaaggcacgctgacgctgaacgacagtaccgtcaccacggatgtcattgctcagc
+gcggtacagccctgaagctgaccggcagcactgtgctgaacggtgccattgaccccacgaatgtcactctcgcctccggt
+gccacctggaatatccccgataacgccacggtgcagtcggtggtggatgacctcagccatgccggacagattcatttcac
+ctccacccgcacagggaagttcgtaccggcaaccctgaaagtgaaaaacctgaacggacagaatggcaccatcagcctgc
+gtgtacgcccggatatggcacagaacaatgctgacagactggtcattgacggcggcagggcaaccggaaaaaccatcctg
+aacctggtgaacgccggcaacagtgcgtcggggctggcgaccagcggtaagggtattcaggtggtggaagccattaacgg
+tgccaccacggaggaaggggcctttgtccaggggaacaggctgcaagccggtgcctttaactactccctcaaccgggaca
+gtgatgagagctggtatctgcgcagtgaaaatgcttatcgtgcagaagtccccctgtatgcctccatgctgacacaggca
+atggactatgaccggattgtggcaggctcccgcagccatcagaccggtgtaaatggtgaaaacaacagcgtccgtctcag
+cattcagggcggtcatctcggtcacgataacaatggcggtattgcccgtggggccacgccggaaagcagcggcagctatg
+gattcgtccgtctggagggtgacctgatgagaacagaggttgccggtatgtctgtgaccgcgggggtatatggtgctgct
+ggccattcttccgttgatgttaaggatgatgacggctcccgtgccggcacggtccgggatgatgccggcagcctgggcgg
+atacctgaatctggtacacacgtcctccggcctgtgggctgacattgtggcacagggaacccgccacagcatgaaagcgt
+catcggacaataacgacttccgcgcccggggctggggctggctgggctcactggaaaccggtctgcccttcagtatcact
+gacaacctgatgctggagccacaactgcaatatacctggcagggactttccctggatgacggtaaggacaacgccggtta
+tgtgaagttcgggcatggcagtgcacaacatgtgcgtgccggtttccgtctgggcagccacaacgatatgacctttggcg
+aaggcacctcatcccgtgcccccctgcgtgacagtgcaaaacacagtgtgagtgaattaccggtgaactggtgggtacag
+ccttctgttatccgcaccttcagctcccggggagatatgcgtgtggggacttccactgcaagcagcgggatgacgttctc
+tccctcacagaatggcacatcactggacctgcaagccggactggaagcccgtgtccgggaaaatatcaccctgggcgttc
+aggccggttatgcccacagcgtcagcggcagcagcgctgaagggtataacggtcaggccacactgaatgtgaccttctga
+</seq_data></sequences>
+<features>
+<feature>
+<id>2092871</id>
+<title>BBa_K346007</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>3120</endpos></feature>
+<feature>
+<id>2092870</id>
+<title>agn43</title>
+<type>dna</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>3120</endpos></feature>
+<feature>
+<id>2092872</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2092873</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2092874</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature>
+<feature>
+<id>2092875</id>
+<title></title>
+<type>new_feature</type>
+<direction>forward</direction>
+<startpos>1</startpos>
+<endpos>0</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 --></parameters>
+<categories></categories>
+<twins>
+<twin>BBa_K346007</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>brick_icon.png</file>
+        <file>exportButton_hover.png</file>
+        <file>saveButton_Hover.png</file>
+        <file>exportButton.png</file>
+        <file>saveButton.png</file>
+        <file>down_arror.png</file>
+        <file>dna.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>biodesigner.css</file>
+    </qresource>
+</RCC>

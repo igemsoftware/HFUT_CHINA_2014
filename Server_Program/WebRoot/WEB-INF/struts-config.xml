@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	
+	<action-mappings>
+	
+		<action path="/coreAction"
+			    type="com.sanmixy.actions.CoreAction"
+			    scope="request"
+			    validate="true"
+			    >
+			    
+			    <forward name="next" path="/example.jsp"/>
+			    
+		</action>
+		
+		<action path="/doublePartCirAction"
+			    type="com.sanmixy.actions.DoublePartCirAction"
+			    scope="request"
+			    validate="true"
+			    >
+			    
+			    <forward name="next" path="/example.jsp"/>
+			    
+		</action>
+		
+			    
+		
+	</action-mappings>
+	<!-- ======================================== Message Resources Definitions -->
+
+    <message-resources parameter="MessageResources"/>
+    
+    <message-resources parameter="ApplicationResources"/>
+    
+    <message-resources parameter="mainpageResources" />
+    
+    
+    
+    <!-- Jakarta Validator Framework plugin Definitions -->
+    
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+
+    	<set-property value="/WEB-INF/validator/validator-rules.xml,/WEB-INF/validator/validation.xml" property="pathnames"/>
+    	
+    	<set-property value="true" property="stopOnFirstError"/>
+    	
+    </plug-in>
+    
+    
+    
+</struts-config>
+

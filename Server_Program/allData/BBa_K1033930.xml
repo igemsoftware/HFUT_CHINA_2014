@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!--Parts from the iGEM Registry of Standard Biological Parts-->
+<rsbpml>
+<part_list>
+<part>
+<part_id>30701</part_id>
+<part_name>BBa_K1033930</part_name>
+<part_short_name>K1033930</part_short_name>
+<part_short_desc>amilCP, blue/purple chromoprotein (incl RBS)</part_short_desc>
+<part_type>Reporter</part_type>
+<release_status>Not Released</release_status>
+<sample_status>In stock</sample_status>
+<part_results>Works</part_results>
+<part_nickname></part_nickname>
+<part_rating></part_rating>
+<part_url>http://parts.igem.org/Part:BBa_K1033930</part_url>
+<part_entered>2013-09-17</part_entered>
+<part_author>Erik Lundin</part_author>
+<deep_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>22509</part_id>
+<part_name>BBa_K592009</part_name>
+<part_short_desc>amilCP, blue chromoprotein</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>amilCP</part_nickname></subpart></deep_subparts>
+<specified_subparts>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<subpart>
+<part_id>22509</part_id>
+<part_name>BBa_K592009</part_name>
+<part_short_desc>amilCP, blue chromoprotein</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>amilCP</part_nickname></subpart></specified_subparts>
+<specified_subscars>
+<subpart>
+<part_id>151</part_id>
+<part_name>BBa_B0034</part_name>
+<part_short_desc>RBS (Elowitz 1999) -- defines RBS efficiency</part_short_desc>
+<part_type>RBS</part_type>
+<part_nickname></part_nickname></subpart>
+<scar>
+<scar_id>34</scar_id>
+<scar_standard>10</scar_standard>
+<scar_type>Scar</scar_type>
+<scar_name>RFC[10.1]</scar_name>
+<scar_nickname>[10.1]</scar_nickname>
+<scar_comments>When the next part begins AT</scar_comments>
+<scar_sequence>tactag</scar_sequence></scar>
+<subpart>
+<part_id>22509</part_id>
+<part_name>BBa_K592009</part_name>
+<part_short_desc>amilCP, blue chromoprotein</part_short_desc>
+<part_type>Coding</part_type>
+<part_nickname>amilCP</part_nickname></subpart></specified_subscars>
+<sequences>
+<seq_data>aaagaggagaaatactagatgagtgtgatcgctaaacaaatgacctacaaggtttatatgtcaggcacggtcaatggaca
+ctactttgaggtcgaaggcgatggaaaaggtaagccctacgagggggagcagacggtaaagctcactgtcaccaagggcg
+gacctctgccatttgcttgggatattttatcaccacagtgtcagtacggaagcataccattcaccaagtaccctgaagac
+atccctgactatgtaaagcagtcattcccggagggctatacatgggagaggatcatgaactttgaagatggtgcagtgtg
+tactgtcagcaatgattccagcatccaaggcaactgtttcatctaccatgtcaagttctctggtttgaactttcctccca
+atggacctgtcatgcagaagaagacacagggctgggaacccaacactgagcgtctctttgcacgagatggaatgctgcta
+ggaaacaactttatggctctgaagttagaaggaggcggtcactatttgtgtgaatttaaaactacttacaaggcaaagaa
+gcctgtgaagatgccagggtatcactatgttgaccgcaaactggatgtaaccaatcacaacaaggattacacttcggttg
+agcagtgtgaaatttccattgcacgcaaacctgtggtcgcctaataa
+</seq_data></sequences>
+<features>
+<feature>
+<id>2351892</id>
+<title>BBa_B0034</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>1</startpos>
+<endpos>12</endpos></feature>
+<feature>
+<id>2351891</id>
+<title></title>
+<type>conserved</type>
+<direction>forward</direction>
+<startpos>5</startpos>
+<endpos>8</endpos></feature>
+<feature>
+<id>2351893</id>
+<title>amilCP</title>
+<type>cds</type>
+<direction>forward</direction>
+<startpos>19</startpos>
+<endpos>684</endpos></feature>
+<feature>
+<id>2351894</id>
+<title>BBa_K592009</title>
+<type>BioBrick</type>
+<direction>reverse</direction>
+<startpos>19</startpos>
+<endpos>687</endpos></feature></features>
+<parameters>
+<!-- NOTE: Currently, each parameter name can have only one value.-->
+<!--This will change as we fully support the context of a parameter. RDR 4/2010 -->
+<parameter>
+<name>abs</name>
+<value>588 nm</value>
+<units></units>
+<url></url>
+<id>22396</id>
+<m_date>2013-10-31 11:11:08</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter>
+<parameter>
+<name>abs</name>
+<value>NA</value>
+<units></units>
+<url></url>
+<id>22395</id>
+<m_date>2013-10-31 11:10:50</m_date>
+<user_id>10137</user_id>
+<user_name>erigu863</user_name></parameter></parameters>
+<categories>
+<category>//function/reporter/color</category></categories>
+<twins>
+<twin>BBa_K592025</twin>
+<twin>BBa_S05192</twin></twins>
+<samples>
+<!--Samples have been turned off for now - rdr 2013--></samples>
+<references>
+<!--References are not available yet - rdr 2013--></references>
+<groups>
+<!-- Group access information is not yet available - rdr 2013--></groups></part></part_list></rsbpml>
