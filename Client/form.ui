@@ -32,48 +32,13 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="titleLabel">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>570</y>
-     <width>1001</width>
-     <height>37</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="text">
-    <string>UserHistory</string>
-   </property>
-   <property name="titleLabel" stdset="0">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="recomendBrick">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>610</y>
-     <width>1201</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <property name="bottom" stdset="0">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QFrame" name="topFrame">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
+     <x>-10</x>
+     <y>-20</y>
      <width>1226</width>
-     <height>91</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -336,22 +301,6 @@
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>13</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <widget class="QLineEdit" name="brickInput">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -375,22 +324,6 @@
          <string extracomment="Search BioBrick">Search BioBrick</string>
         </property>
        </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>13</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
@@ -445,6 +378,9 @@
       <property name="text">
        <string>Relevant BioBrick</string>
       </property>
+      <property name="titleLabel" stdset="0">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -495,6 +431,54 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QFrame" name="bottomFrame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>561</y>
+     <width>1201</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="bottomFrame" stdset="0">
+    <bool>true</bool>
+   </property>
+   <widget class="QLabel" name="titleLabel">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>7</y>
+      <width>271</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string>UserHistory</string>
+    </property>
+    <property name="titleLabel" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="recomendBrick">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>38</y>
+      <width>1191</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="bottom" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <customwidgets>

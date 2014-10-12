@@ -7,6 +7,7 @@
         <file>saveButton.png</file>
         <file>down_arror.png</file>
         <file>dna.png</file>
+        <file>network-locked-01.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>biodesigner.css</file>

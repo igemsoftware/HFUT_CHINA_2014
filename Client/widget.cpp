@@ -83,7 +83,6 @@ void Widget::searchBoxTyped(QString text){
 
 
 void Widget::checkButtonClicked(){
-    ui->brickList->addBioBrick("C");
 
 }
 

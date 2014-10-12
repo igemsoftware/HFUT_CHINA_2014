@@ -1,7 +1,7 @@
 QLabel[biobrick=true]{
 	border-width: 0px;
 	border-radius: 2px;
-	background-color: #4A90E2;
+	background-color: #002FA7;
 	color: #FFFFFF;
 	font-family: Helvetica;
 	font-size: 18px;
@@ -14,7 +14,7 @@ QLabel[biobrickName=true]{
 	border-width: 0px;
 	border-radius: 2px;
 	background-color: rgba(0, 0, 0, 0);
-	color: #111;
+	color: #333;
 	font-family: Helvetica;
 	font-size: 18px;
 	width: 167px;
@@ -25,7 +25,7 @@ QLabel[biobrickName=true]{
 QLabel[recommendBioBrick=true]{
 	border-width: 0px;
 	border-radius: 2px;
-	background-color:rgba(216, 216, 216, 50);
+	background-color:rgba(200, 200, 200, 50);
 	color:#111;
 	font-family: Helvetica;
 	font-size: 18px;
@@ -60,7 +60,8 @@ QLabel[biobrickImage=true]{
 QLabel[partinfo=true]{
 	border-width: 0px;
 	border-radius: 1px;
-	background-color: #ccc;
+	background-color: #60B8F4;
+	color:#222;
 	font-size: 15px;
 	margin:0px, 0px, 0px, 0px;
 	padding:5px, 5px, 5px, 5px;
@@ -78,7 +79,7 @@ QLineEdit{
 
 QFrame[top=true]{
     background:qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                stop: 0 #F7F3F3, stop: 1 #DAD5D5);
+                                stop: 0 #60B1F4, stop: 1 #088DF9);
     width: auto;
     height: auto;
     margin-right: 5px;
@@ -87,21 +88,19 @@ border-color: #111;
 }
 
 QFrame[midleft=true]{
-        background-color: #EAF6F6;
+        background-color: #60B8F4;
         padding-top: 0px;
 }
 
 QFrame[midright=true]{
-	background-color: #D8D8D8;
+	padding-top: 5px;
+	background-color: #60B8F4;
 }
 
-QLayout[bottomup=true]{
-	background-color: #EDEDED;
+QFrame[bottomFrame=true]{
+	background-color: #A3A3A3;
 }
 
-QLayout[bottomdown=true]{
-	background-color: #FFF;
-}
 
 QPushButton[saveButton=true]{
 	width: 60;
@@ -148,7 +147,7 @@ QPushButton[exportButton=true]:hover{
 
 
 BioBrickListView{
-    background-color: #EAF6F6;
+    background-color: rgb(10, 140, 229, 0);
     border-width: 1px;
 	border-color: #111;
     border-color:#EAF6F6;
@@ -156,8 +155,8 @@ BioBrickListView{
 }
 
 DesignPanel{
-    background-color: #fff;
-    border-width: 1px;
+    background-image: url(:/image/network-locked-01.png);
+    border-width: 3px;
 	border-color: #111;
     border-radius:2px;
     vertical-align: center;
@@ -166,9 +165,11 @@ DesignPanel{
 }
 
 QLabel[titleLabel=true]{
-	background-color:#EDEDED;
+	/*background-color:#1A60AD;*/
 	font-family: Helvetica;
 	font-size: 20px;
+        color:#eee;
+        background-color: rgba(0,0,0,0);
 	border-width: 1px;
 	border-color: #111;
 }
@@ -179,5 +180,6 @@ border-radius:2px;
 margin-left: 5px;
 margin-right: 5px;
 border-width: 1px;
-border-color: #111;
+border-color: #497575;
+
 }

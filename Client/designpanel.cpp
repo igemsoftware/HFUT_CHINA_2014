@@ -32,8 +32,17 @@ DesignPanel::DesignPanel(QWidget *parent):
     setMouseTracking(true);
 
     setAlternatingRowColors(false);
+    //setBackgroundRole(QPalette::Dark);
+    //paintBackground();
 
+}
 
+void DesignPanel::paintBackground(){
+    QPainter painter(this);
+    painter.begin(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.drawImage(0, 0, QImage(":image/network-locked-01.png"));
+    painter.end();
 }
 
 void DesignPanel::mousePressEvent(QMouseEvent* event){
@@ -157,13 +166,19 @@ void DesignPanel::keyPressEvent(QKeyEvent *event){
                 int index = this->row(selects.at(i));
                 this->takeItem(index);
                 m_biobrickNames.removeAt(i);
+                performRecommend();
             }
         }
         break;
     }
     case Qt::Key_J:
     {
-        m_chosenBioBrick = m_chosenBioBrick-1 < 0 ? 0 : m_chosenBioBrick-1;
+        //qDebug() << "p1:" <<m_chosenBioBrick << endl;
+        m_chosenBioBrick--;
+        if (m_chosenBioBrick < 0){
+            m_chosenBioBrick = 0;
+        }
+        //qDebug() <<"p2:"<< m_chosenBioBrick << endl;
         QStringList Jtemp = m_recommendBioBrickNames;
         clearRecommend();
         this->setRecommendBioBrick(Jtemp);
@@ -172,8 +187,13 @@ void DesignPanel::keyPressEvent(QKeyEvent *event){
     }
     case Qt::Key_K:
     {
+        //qDebug() << "p1:" <<m_chosenBioBrick << endl;
         int recommendCount = m_recommendBioBrickNames.size();
-        m_chosenBioBrick = m_chosenBioBrick-1 > recommendCount-1 ? recommendCount-1 : m_chosenBioBrick+1;
+        m_chosenBioBrick++;
+        if (m_chosenBioBrick > recommendCount-1){
+            m_chosenBioBrick = recommendCount-1;
+        }
+        //qDebug() <<"p2:"<< m_chosenBioBrick << endl;
         QStringList Ktemp = m_recommendBioBrickNames;
         int tempIndex = m_chosenBioBrick;
         clearRecommend();
@@ -237,17 +257,12 @@ void DesignPanel::rePaintPanel(){
         label->setPixmap(QPixmap::fromImage(image));
         textLabel->setFixedSize(167, 29);
         textLabel->setAlignment(Qt::AlignCenter);
-        textLabel->setText(m_biobrickNames.at(i));
+        textLabel->setText(m_biobrickNames.at(i).split("|").at(0));
         textLabel->setProperty("biobrickName", true);
         QWidget* labelContainer = new QWidget();
         QVBoxLayout* layout = new QVBoxLayout();
-        if (i % 2){
-            layout->addWidget(label);
-            layout->addWidget(textLabel);
-        } else{
-            layout->addWidget(textLabel);
-            layout->addWidget(label);
-        }
+        layout->addWidget(label);
+        layout->addWidget(textLabel);
         labelContainer->setLayout(layout);
         QListWidgetItem* item = new QListWidgetItem();
         item->setSizeHint(QSize(177, 95));
@@ -412,13 +427,9 @@ void DesignPanel::addBioBrick(QString biobrick){
     textLabel->setProperty("biobrickName", true);
     QWidget* labelContainer = new QWidget();
     QVBoxLayout* layout = new QVBoxLayout();
-    if (std::rand() % 2){
-        layout->addWidget(label);
-        layout->addWidget(textLabel);
-    } else{
-        layout->addWidget(textLabel);
-        layout->addWidget(label);
-    }
+    layout->addWidget(label);
+    layout->addWidget(textLabel);
+
     labelContainer->setLayout(layout);
     QListWidgetItem* item = new QListWidgetItem();
     item->setSizeHint(QSize(177, 95));

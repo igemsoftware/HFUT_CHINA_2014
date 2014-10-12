@@ -53,6 +53,8 @@ private:
     void clearRecommend();
     void addBioBrick(QString biobrick);
 
+    void paintBackground();
+
     void performRecommend();
     QStringList processHttpResult();
     std::string getRequestUrl(const QString& requestType, const QStringList& prama);

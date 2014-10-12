@@ -61,7 +61,7 @@ QStringList* Recommendation::processHttpResult(){
 }
 
 std::string Recommendation::getRequestUrl(const QString &requestType, const QStringList &prama){
-    std::string url = "http://210.45.250.5:8080/BioDesigner/core2.jsp?requestType="+requestType.toStdString();
+    std::string url = "http://210.45.250.5:8080/BioDesigner/core.jsp?requestType="+requestType.toStdString();
     if (requestType == "recommendation"){
         url += "&partNum=" + QVariant(prama.size()).toString().toStdString();
         for (int i = 0; i < prama.size(); i++){

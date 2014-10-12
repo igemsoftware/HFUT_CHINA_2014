@@ -58,7 +58,7 @@ QStringList* Search::processHttpResult(){
 }
 
 std::string Search::getRequestUrl(const QString &requestType, const QStringList &prama, const QString &keyword){
-    std::string url = "http://210.45.250.5:8080/BioDesigner/core2.jsp?requestType="+requestType.toStdString()+
+    std::string url = "http://210.45.250.5:8080/BioDesigner/core.jsp?requestType="+requestType.toStdString()+
             "&partNum=" + QVariant(prama.size()).toString().toStdString();
     for (int i = 0; i < prama.size(); i++){
         url += "&partName" + QVariant(i).toString().toStdString() + "=" + prama.at(i).toStdString();

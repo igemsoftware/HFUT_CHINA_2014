@@ -13,6 +13,7 @@ BioBrickListView::BioBrickListView(QWidget *parent) :
 {
     setAcceptDrops(false);
     setMouseTracking(true);
+    setViewMode(QListView::IconMode);
     setFocusPolicy(Qt::NoFocus);
     setAlternatingRowColors(false);
 }
@@ -21,6 +22,10 @@ void BioBrickListView::mousePressEvent(QMouseEvent *event){
     if (event->button() == Qt::LeftButton){
         m_mouseStartPositon = event->pos();
         QListWidgetItem* item = this->itemAt(this->mapFrom(this, event->pos()));
+        if (item == NULL){
+            return;
+        }
+        //item->setBackgroundColor(QColor(60, 60, 60));
         int index = this->row(item);
         qDebug() << index << endl;
         QStringList infos = m_biobrickNames.at(index).split("|");
@@ -102,10 +107,13 @@ void BioBrickListView::addBioBrick(const QString &info){
     label->setAlignment(Qt::AlignCenter);
     QWidget* labelContainer = new QWidget();
     QVBoxLayout* layout = new QVBoxLayout();
+    layout->addStretch();
     layout->addWidget(label);
+    layout->addStretch();
     labelContainer->setLayout(layout);
     QListWidgetItem* item = new QListWidgetItem();
     item->setSizeHint(QSize(177, 40));
+
     addItem(item);
     setItemWidget(item, labelContainer);
     m_biobrickNames.push_back(info);
