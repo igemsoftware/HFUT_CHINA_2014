@@ -60,7 +60,7 @@ QLabel[biobrickImage=true]{
 QLabel[partinfo=true]{
 	border-width: 0px;
 	border-radius: 1px;
-	background-color: #60B8F4;
+	background-color: #8FB2F6;
 	color:#222;
 	font-size: 15px;
 	margin:0px, 0px, 0px, 0px;
@@ -79,7 +79,7 @@ QLineEdit{
 
 QFrame[top=true]{
     background:qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                stop: 0 #60B1F4, stop: 1 #088DF9);
+                                stop: 0 #D9DBDC, stop: 1 #A3A6A7);
     width: auto;
     height: auto;
     margin-right: 5px;
@@ -88,13 +88,13 @@ border-color: #111;
 }
 
 QFrame[midleft=true]{
-        background-color: #60B8F4;
+        background-color: #8FB2F6;
         padding-top: 0px;
 }
 
 QFrame[midright=true]{
 	padding-top: 5px;
-	background-color: #60B8F4;
+	background-color: #8FB2F6;
 }
 
 QFrame[bottomFrame=true]{
@@ -102,52 +102,80 @@ QFrame[bottomFrame=true]{
 }
 
 
-QPushButton[saveButton=true]{
+QPushButton[checkButton=true]{
 	width: 60;
 	height:40;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #D0021B;
 	border-radius: 3px;
 	border-width: 0px;
-	color:#444;
+	color:#CFCECF;
 	font-style: italic;
 	font-weight: lighter;
-	font-size:16pt;
+	font-size:12pt;
 }
-QPushButton[saveButton=true]:hover{
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 18pt;
-    color:#4A90E2;
+QPushButton[checkButton=true]:hover{
+    background-color: rgba(208, 2, 27, 50);
+    font-size: 14pt;
+    color:#333;
 }
 
+
+QPushButton[projectButton=true]{
+	width: 60;
+	height:40;
+	background-color: #1477EB;
+	border-radius: 3px;
+	border-width: 0px;
+	color:#CFCECF;
+	font-style: italic;
+	font-weight: lighter;
+	font-size:12pt;
+}
+
+QPushButton[projectButton=true]:hover{
+background-color: rgba(74, 144, 226, 50);
+    font-size: 14pt;
+    color:#333;
+}
 
 QPushButton[exportButton=true]{
-        width: 60px;
-        height:40px;
-    background-color: rgba(0, 0, 0, 0);
+	width: 60;
+	height:40;
+	background-color: #C5A300;
 	border-radius: 3px;
 	border-width: 0px;
-	color:#444;
+	color:#CFCECF;
 	font-style: italic;
-	font-size:16pt;
 	font-weight: lighter;
+	font-size:12pt;
 }
 
 QPushButton[exportButton=true]:hover{
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 3px;
-    border-width: 0px;
-    color:#444;
-    font-style: italic;
-    font-size:16pt;
-    font-weight: lighter;
-    font-size: 18pt;
-    color:#4A90E2;
+background-color: rgba(197, 163, 0, 50);
+    font-size: 14pt;
+    color:#333;
+}
+
+QPushButton[saveButton=true]{
+	width: 60;
+	height:40;
+	background-color: #09AF3B;
+	border-radius: 3px;
+	border-width: 0px;
+	color:#CFCECF;
+	font-style: italic;
+	font-weight: lighter;
+	font-size:12pt;
+}
+QPushButton[saveButton=true]:hover{
+	background-color: rgba(15, 233, 81, 50);
+	font-size: 14pt;
+    color:#333;
 }
 
 
-
 BioBrickListView{
-    background-color: rgb(10, 140, 229, 0);
+    background-color: #8FB2F6;
     border-width: 1px;
 	border-color: #111;
     border-color:#EAF6F6;

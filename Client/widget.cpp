@@ -30,8 +30,12 @@
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent), ui(new Ui::Form), m_projectName("New Project")
-{
+{    
+#ifdef Q_WS_WIN
+    m_filePath = QDir::homePath();
+#else
     m_filePath = QDir::homePath() + "/Desktop/";
+#endif
     m_projectFile = new QFile(m_filePath + m_projectName + ".bd");
     ui->setupUi(this);
     setFixedSize(1200, 760);
@@ -55,13 +59,14 @@ Widget::Widget(QWidget *parent)
     //ui->brickList->setFixedSize(250, 450);
 
     ui->recomendBrick->setFixedHeight(151);
-    ui->saveButton->setFixedSize(110, 40);
-    ui->checkButton->setFixedSize(110, 40);
-    ui->openButton->setFixedSize(110, 40);
-    ui->newButton->setFixedSize(110, 40);
-    ui->exportButton->setFixedSize(110, 40);
+    ui->saveButton->setFixedSize(60, 25);
+    ui->checkButton->setFixedSize(60, 25);
+    ui->openButton->setFixedSize(60, 25);
+    ui->newButton->setFixedSize(60, 25);
+    ui->exportButton->setFixedSize(60, 25);
     ui->recomendBrick->setFocusPolicy(Qt::NoFocus);
     setWindowTitle(m_projectName + "-" + "BioFunctional Designer");
+    ui->functionInput->setFocus();
 }
 
 Widget::~Widget()

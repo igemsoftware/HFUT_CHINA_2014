@@ -56,6 +56,9 @@ void DesignPanel::mousePressEvent(QMouseEvent* event){
             int yDistance = event->pos().y() - 20;
             int index = yDistance/30;
             qDebug () << "press" <<index << endl;
+            if (index >= m_recommendBioBrickNames.size()){
+                return;
+            }
             QStringList infos = m_recommendBioBrickNames.at(index).split("|");
             QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\" "
                     + infos.at(2) + "\">InfoPage</a>";
@@ -166,6 +169,7 @@ void DesignPanel::keyPressEvent(QKeyEvent *event){
                 int index = this->row(selects.at(i));
                 this->takeItem(index);
                 m_biobrickNames.removeAt(i);
+                clearRecommend();
                 performRecommend();
             }
         }
@@ -222,7 +226,7 @@ void DesignPanel::insertBioBrick(int index, const QString &name){
 
 QImage* DesignPanel::getResultImage(const QString& function){
     //qDebug() << function << endl;
-    QImage* image = new QImage(QSize(177*m_biobrickNames.size() + 10, 100), QImage::Format_ARGB32);
+    QImage* image = new QImage(QSize(200*m_biobrickNames.size() + 10, 130), QImage::Format_ARGB32);
     QPainter painter(image);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(QColor(255, 255, 255));
@@ -230,8 +234,14 @@ QImage* DesignPanel::getResultImage(const QString& function){
     int x = 10;
     int y = 20;
     for (int i = 0; i < m_biobrickNames.size(); i++){
-        painter.drawImage(x + i * 167, y, QImage(":/image/dna.png"));
-        painter.drawText(x + i*167, y + 70, m_biobrickNames.at(i).split("|").at(0));
+        QStringList infos = m_biobrickNames.at(i).split("|");
+        QImage image(":image/" + infos.at(1) + ".png");
+        if (image.isNull()){
+            painter.drawImage(x + i * 190, y, QImage(":/image/dna.png"));
+        }else{
+            painter.drawImage(x + i * 190, y, image);
+        }
+        painter.drawText(x + i*167, y + 80, infos.at(0));
         x+= 10;
     }
     painter.setFont(QFont("Helvetica", 20));
@@ -247,25 +257,31 @@ void DesignPanel::clean(){
 
 void DesignPanel::rePaintPanel(){
     for (int i = 0; i < m_biobrickNames.size(); i++){
+        QStringList infos = m_biobrickNames.at(i).split("|");
         QLabel* label = new QLabel;
         QLabel* textLabel = new QLabel;
         label->setProperty("biobrickImage", true);
         label->setAlignment(Qt::AlignCenter);
-        label->setFixedSize(167, 62);
+        label->setFixedSize(180, 67);
         QPicture dnaPicture();
-        QImage image(":image/dna.png");
-        label->setPixmap(QPixmap::fromImage(image));
+        QImage image(":image/" + infos.at(1) + ".png");
+        if (image.isNull()){
+            label->setPixmap(QPixmap::fromImage(QImage(":image/dna.png")));
+        }else{
+            label->setPixmap(QPixmap::fromImage(image));
+        }
         textLabel->setFixedSize(167, 29);
         textLabel->setAlignment(Qt::AlignCenter);
-        textLabel->setText(m_biobrickNames.at(i).split("|").at(0));
+        textLabel->setText(infos.at(0));
         textLabel->setProperty("biobrickName", true);
         QWidget* labelContainer = new QWidget();
         QVBoxLayout* layout = new QVBoxLayout();
         layout->addWidget(label);
+        layout->addStretch();
         layout->addWidget(textLabel);
         labelContainer->setLayout(layout);
         QListWidgetItem* item = new QListWidgetItem();
-        item->setSizeHint(QSize(177, 95));
+        item->setSizeHint(QSize(185, 120));
         addItem(item);
         setItemWidget(item, labelContainer);
     }
@@ -416,10 +432,14 @@ void DesignPanel::addBioBrick(QString biobrick){
     textLabel->setToolTip(tips);
     label->setProperty("biobrickImage", true);
     label->setAlignment(Qt::AlignCenter);
-    label->setFixedSize(167, 62);
+    label->setFixedSize(180, 67);
     QPicture dnaPicture();
-    QImage image(":image/dna.png");
-    label->setPixmap(QPixmap::fromImage(image));
+    QImage image(":image/" + infos.at(1) + ".png");
+    if (image.isNull()){
+        label->setPixmap(QPixmap::fromImage(QImage(":image/dna.png")));
+    }else{
+        label->setPixmap(QPixmap::fromImage(image));
+    }
     textLabel->setFixedSize(167, 29);
     textLabel->setAlignment(Qt::AlignCenter);
     qDebug() << biobrick << endl;
@@ -428,11 +448,12 @@ void DesignPanel::addBioBrick(QString biobrick){
     QWidget* labelContainer = new QWidget();
     QVBoxLayout* layout = new QVBoxLayout();
     layout->addWidget(label);
+    layout->addStretch();
     layout->addWidget(textLabel);
 
     labelContainer->setLayout(layout);
     QListWidgetItem* item = new QListWidgetItem();
-    item->setSizeHint(QSize(177, 95));
+    item->setSizeHint(QSize(185, 120));
     addItem(item);
     setItemWidget(item, labelContainer);
     m_biobrickNames.push_back(biobrick);

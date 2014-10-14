@@ -8,6 +8,20 @@
         <file>down_arror.png</file>
         <file>dna.png</file>
         <file>network-locked-01.png</file>
+        <file>Generator.png</file>
+        <file>Intermediate.png</file>
+        <file>Protein_Domain.png</file>
+        <file>RNA.png</file>
+        <file>Signalling.png</file>
+        <file>Temporary.png</file>
+        <file>Translational_Unit.png</file>
+        <file>Coding.png</file>
+        <file>Conjugation.png</file>
+        <file>RBS.png</file>
+        <file>Regulatory.png</file>
+        <file>T7.png</file>
+        <file>Tag.png</file>
+        <file>Terminator.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>biodesigner.css</file>

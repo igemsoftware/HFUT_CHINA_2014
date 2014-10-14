@@ -118,7 +118,7 @@
       <property name="text">
        <string>New</string>
       </property>
-      <property name="exportButton" stdset="0">
+      <property name="projectButton" stdset="0">
        <bool>true</bool>
       </property>
      </widget>
@@ -150,7 +150,7 @@
       <property name="text">
        <string>Open</string>
       </property>
-      <property name="exportButton" stdset="0">
+      <property name="projectButton" stdset="0">
        <bool>true</bool>
       </property>
      </widget>
@@ -180,47 +180,15 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>CheckModel</string>
+       <string>Check</string>
       </property>
-      <property name="exportButton" stdset="0">
+      <property name="checkButton" stdset="0">
        <bool>true</bool>
       </property>
      </widget>
     </item>
     <item>
      <spacer name="horizontalSpacer_4">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QPushButton" name="saveButton">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Save</string>
-      </property>
-      <property name="saveButton" stdset="0">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="horizontalSpacer_5">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -247,6 +215,38 @@
        <string>Export</string>
       </property>
       <property name="exportButton" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+      <property name="saveButton" stdset="0">
        <bool>true</bool>
       </property>
      </widget>
@@ -493,6 +493,19 @@
    <header>designpanel.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>functionInput</tabstop>
+  <tabstop>brickInput</tabstop>
+  <tabstop>brickList</tabstop>
+  <tabstop>desginPanel</tabstop>
+  <tabstop>newButton</tabstop>
+  <tabstop>openButton</tabstop>
+  <tabstop>checkButton</tabstop>
+  <tabstop>exportButton</tabstop>
+  <tabstop>saveButton</tabstop>
+  <tabstop>relevantList</tabstop>
+  <tabstop>recomendBrick</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
