@@ -32,6 +32,19 @@ QLabel[recommendBioBrick=true]{
 	text-align: center;
 }
 
+QLabel[errorBioBrick=true]{
+	border-width: 0px;
+	border-radius: 2px;
+	background-color: #D0021B;
+	color: #eee;
+	font-family: Helvetica;
+	font-size: 18px;
+	width: 167px;
+	height: 29px;
+	text-align: center;
+
+}
+
 QLabel[chosenReommendBioBrick=true]{
 	border-width: 0px;
 	border-radius: 2px;
@@ -60,7 +73,7 @@ QLabel[biobrickImage=true]{
 QLabel[partinfo=true]{
 	border-width: 0px;
 	border-radius: 1px;
-	background-color: #8FB2F6;
+	background-color: #CCD8F0;
 	color:#222;
 	font-size: 15px;
 	margin:0px, 0px, 0px, 0px;
@@ -88,13 +101,13 @@ border-color: #111;
 }
 
 QFrame[midleft=true]{
-        background-color: #8FB2F6;
+        background-color: #CCD8F0;
         padding-top: 0px;
 }
 
 QFrame[midright=true]{
 	padding-top: 5px;
-	background-color: #8FB2F6;
+	background-color: #CCD8F0;
 }
 
 QFrame[bottomFrame=true]{
@@ -175,7 +188,7 @@ QPushButton[saveButton=true]:hover{
 
 
 BioBrickListView{
-    background-color: #8FB2F6;
+    background-color: #CCD8F0;
     border-width: 1px;
 	border-color: #111;
     border-color:#EAF6F6;
@@ -196,7 +209,7 @@ QLabel[titleLabel=true]{
 	/*background-color:#1A60AD;*/
 	font-family: Helvetica;
 	font-size: 20px;
-        color:#eee;
+        color:#4A90E2;
         background-color: rgba(0,0,0,0);
 	border-width: 1px;
 	border-color: #111;

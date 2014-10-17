@@ -1,7 +1,10 @@
-/**
-*@author Bowen Gong
-*
-* */
+/*! \file widget.cpp
+ * \brief implement the Widget class
+ *
+ * \author Bowen
+ * \version 1.0
+ * \date 2014.09.30
+ */
 
 #define MAGICNUMBER 0x08280112
 
@@ -39,7 +42,7 @@ Widget::Widget(QWidget *parent)
     m_projectFile = new QFile(m_filePath + m_projectName + ".bd");
     ui->setupUi(this);
     setFixedSize(1200, 760);
-    connect(ui->checkButton, SIGNAL(clicked()), this, SLOT(checkButtonClicked()));
+    //connect(ui->checkButton, SIGNAL(clicked()), this, SLOT(checkButtonClicked()));
     connect(ui->saveButton, SIGNAL(clicked()), this, SLOT(saveButtonClicked()));
     connect(ui->exportButton, SIGNAL(clicked()), this, SLOT(exportButtonClicked()));
     connect(ui->brickInput, SIGNAL(textChanged(QString)), this, SLOT(searchBoxTyped(QString)));
@@ -60,7 +63,7 @@ Widget::Widget(QWidget *parent)
 
     ui->recomendBrick->setFixedHeight(151);
     ui->saveButton->setFixedSize(60, 25);
-    ui->checkButton->setFixedSize(60, 25);
+    //ui->checkButton->setFixedSize(60, 25);
     ui->openButton->setFixedSize(60, 25);
     ui->newButton->setFixedSize(60, 25);
     ui->exportButton->setFixedSize(60, 25);
@@ -87,9 +90,6 @@ void Widget::searchBoxTyped(QString text){
 }
 
 
-void Widget::checkButtonClicked(){
-
-}
 
 void Widget::saveButtonClicked(){
     saveProject();

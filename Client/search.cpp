@@ -1,3 +1,13 @@
+/*!
+ * \file search.cpp
+ * \brief implement the search class, which will do the search
+ *
+ * \author Bowen
+ * \version 1.0
+ * \date 2014.09.30
+ */
+
+
 #include "search.h"
 #include <curl/curl.h>
 #include <boost/property_tree/ptree.hpp>

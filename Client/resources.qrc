@@ -22,6 +22,14 @@
         <file>T7.png</file>
         <file>Tag.png</file>
         <file>Terminator.png</file>
+        <file>Composite.png</file>
+        <file>Device.png</file>
+        <file>Inverter.png</file>
+        <file>Measurement.png</file>
+        <file>Other.png</file>
+        <file>Plasmid.png</file>
+        <file>Project.png</file>
+        <file>Reporter.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>biodesigner.css</file>

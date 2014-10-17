@@ -1,6 +1,16 @@
+/*!
+ * \file designpanel.cpp
+ * \brief implement design panel class, a customed QListWidget
+ *
+ * \author Bowen
+ * \version 1.0
+ * \date 2014.09.30
+ */
+
 #include "designpanel.h"
 #include "recommendation.h"
 #include "biobricklistview.h"
+#include "correction.h"
 #include <QApplication>
 #include <QMimeData>
 #include <QDrag>
@@ -34,6 +44,7 @@ DesignPanel::DesignPanel(QWidget *parent):
     setAlternatingRowColors(false);
     //setBackgroundRole(QPalette::Dark);
     //paintBackground();
+    performRecommend();
 
 }
 
@@ -147,8 +158,10 @@ void DesignPanel::dropEvent(QDropEvent *event){
         //qDebug() << "d2" << endl;
     }
 }
-void DesignPanel::clearRecommend(){
-    m_chosenBioBrick = 0;
+void DesignPanel::clearRecommend(bool isClear){
+    if(isClear){
+        m_chosenBioBrick = 0;
+    }
     //qDebug() << this->count() << endl;
     if (m_recommendItem != NULL){
         this->takeItem(this->row(m_recommendItem));
@@ -184,7 +197,7 @@ void DesignPanel::keyPressEvent(QKeyEvent *event){
         }
         //qDebug() <<"p2:"<< m_chosenBioBrick << endl;
         QStringList Jtemp = m_recommendBioBrickNames;
-        clearRecommend();
+        clearRecommend(false);
         this->setRecommendBioBrick(Jtemp);
         showRecommend();
         break;
@@ -200,7 +213,7 @@ void DesignPanel::keyPressEvent(QKeyEvent *event){
         //qDebug() <<"p2:"<< m_chosenBioBrick << endl;
         QStringList Ktemp = m_recommendBioBrickNames;
         int tempIndex = m_chosenBioBrick;
-        clearRecommend();
+        clearRecommend(false);
         m_chosenBioBrick = tempIndex;
         this->setRecommendBioBrick(Ktemp);
         showRecommend();
@@ -237,11 +250,11 @@ QImage* DesignPanel::getResultImage(const QString& function){
         QStringList infos = m_biobrickNames.at(i).split("|");
         QImage image(":image/" + infos.at(1) + ".png");
         if (image.isNull()){
-            painter.drawImage(x + i * 190, y, QImage(":/image/dna.png"));
+            painter.drawImage(x + i * 200, y, QImage(":/image/dna.png"));
         }else{
-            painter.drawImage(x + i * 190, y, image);
+            painter.drawImage(x + i * 200, y, image);
         }
-        painter.drawText(x + i*167, y + 80, infos.at(0));
+        painter.drawText(x + i*200, y + 80, infos.at(0));
         x+= 10;
     }
     painter.setFont(QFont("Helvetica", 20));
@@ -270,10 +283,15 @@ void DesignPanel::rePaintPanel(){
         }else{
             label->setPixmap(QPixmap::fromImage(image));
         }
+        if (infos.size() == 4){
+            textLabel->setProperty("errorBioBrick", true);
+        }else{
+            textLabel->setProperty("biobrickName", true);
+        }
         textLabel->setFixedSize(167, 29);
         textLabel->setAlignment(Qt::AlignCenter);
         textLabel->setText(infos.at(0));
-        textLabel->setProperty("biobrickName", true);
+
         QWidget* labelContainer = new QWidget();
         QVBoxLayout* layout = new QVBoxLayout();
         layout->addWidget(label);
@@ -323,14 +341,17 @@ void DesignPanel::performRecommend(){
     //dresultString.clear();
     QStringList parma;
     int index = currentIndex().row();
-    int i = m_biobrickNames.size()-1;
-    int count = 0;
-    while (i >=0 && count <=3){
-        parma.push_back(m_biobrickNames.at(i).split("|").at(0));
-        i--;
-        count++;
+    int biobrickCount = m_biobrickNames.size();
+    if (biobrickCount <=5){
+        for (int i = 0; i < biobrickCount; i++){
+            parma.push_back(m_biobrickNames.at(i).split("|").at(0));
+        }
+    } else{
+        int i = biobrickCount - 6;
+        for (int j = 0; j < 5 && i < biobrickCount; j++, i++){
+            parma.push_back(m_biobrickNames.at(i).split("|").at(0));
+        }
     }
-
     QStringList* resultBioBrick = Recommendation::doRecommendation(parma);
     if (resultBioBrick == NULL){
         return;
@@ -457,5 +478,8 @@ void DesignPanel::addBioBrick(QString biobrick){
     addItem(item);
     setItemWidget(item, labelContainer);
     m_biobrickNames.push_back(biobrick);
+    //showCheck(Correction::doCorrection(m_biobrickNames));
 }
+
+
 

@@ -1,3 +1,12 @@
+/*!
+ * \file recommendation.cpp
+ * \brief implement the Recommendation class
+ *
+ * \author Bowen
+ * \version 1.0
+ * \date 2014.09.30
+ */
+
 #include "recommendation.h"
 #include <curl/curl.h>
 #include <boost/property_tree/ptree.hpp>
@@ -49,7 +58,7 @@ QStringList* Recommendation::processHttpResult(){
             results->push_back(QString::fromStdString(name + "|" + type + "|" + url));
         }
         dresultStr.clear();
-        qDebug() << *results << endl;
+        //qDebug() << *results << endl;
         return results;
     }
     catch(ptree_error& error){

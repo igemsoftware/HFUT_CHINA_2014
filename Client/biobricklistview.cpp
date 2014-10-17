@@ -1,3 +1,14 @@
+/*!
+ * \file biobricklistview.cpp
+ * \brief implement the BioBrickListView class
+ *
+ * The file implement the class BioBrickListView
+ *
+ * \author Bowen
+ * \version 1.0
+ * \date 2014.09.30
+ */
+
 #include "biobricklistview.h"
 #include "designpanel.h"
 #include <QApplication>
