@@ -30,6 +30,7 @@
         <file>Plasmid.png</file>
         <file>Project.png</file>
         <file>Reporter.png</file>
+        <file>BioFunctionalDesigner.icns</file>
     </qresource>
     <qresource prefix="/qss">
         <file>biodesigner.css</file>

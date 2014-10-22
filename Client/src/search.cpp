@@ -78,7 +78,7 @@ std::string Search::getRequestUrl(const QString &requestType, const QStringList 
     return url;
 }
 
-size_t processHTTPRes(void* buffer, size_t size, size_t nmenb, void* stream){
+size_t processHTTPRes(void* buffer, size_t size, size_t nmenb, void* /*stream*/){
     resultStr += (char*)buffer;
     //qDebug() << QString::fromStdString(resultStr) << endl;
 

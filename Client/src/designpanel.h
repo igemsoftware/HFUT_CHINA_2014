@@ -55,6 +55,7 @@ public:
 signals:
     void relevantActived(QStringList*);
     void infoActived(QString);
+    void biobrickadded();
 public slots:
 
 protected:

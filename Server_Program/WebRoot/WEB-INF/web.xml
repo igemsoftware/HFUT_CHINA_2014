@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
- <display-name>Struts Blank Application</display-name>
-  
-  <!-- Standard Action Servlet Configuration (with debugging) -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Struts Blank Application</display-name>
   <servlet>
     <servlet-name>action</servlet-name>
     <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
@@ -24,36 +18,14 @@
     </init-param>
     <load-on-startup>2</load-on-startup>
   </servlet>
-
-
-  <!-- Standard Action Servlet Mapping -->
   <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-
-
-  <!-- The Usual Welcome File List -->
   <welcome-file-list>
     <welcome-file>core.jsp</welcome-file>
   </welcome-file-list>
-  
-  
- <!-- <listener>
-  
-  	<listener-class>com.sanmixy.listener.OnLineNumsListener</listener-class>
-  	
-  </listener>
-  -->
- 
- 
- <!-- session timeout info: 5 minutes will be tolerated --> 
   <session-config>
-  	
-  	<session-timeout>5</session-timeout>
-  	
+    <session-timeout>5</session-timeout>
   </session-config>
-  
-  
-  
 </web-app>

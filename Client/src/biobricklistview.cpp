@@ -40,8 +40,8 @@ void BioBrickListView::mousePressEvent(QMouseEvent *event){
         int index = this->row(item);
         qDebug() << index << endl;
         QStringList infos = m_biobrickNames.at(index).split("|");
-        QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\" "
-                + infos.at(2) + "\">InfoPage</a>";
+        QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\""
+                + infos.at(2).trimmed() + "\">InfoPage</a>";
         emit infoActived(info);
     }
     QListWidget::mousePressEvent(event);
@@ -76,7 +76,7 @@ void BioBrickListView::performDrag(){
     }
 }
 
-void BioBrickListView::keyPressEvent(QKeyEvent *event){
+void BioBrickListView::keyPressEvent(QKeyEvent */*event*/){
 
 }
 

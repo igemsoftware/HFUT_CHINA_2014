@@ -13,14 +13,31 @@ import com.sanmixy.dao.TriplePartCirDao;
 import com.sanmixy.model.TriplePartCir;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief TriplePartCir DAO implements
+ *
+ */
 public class TriplePartCirDaoImpl extends HibernateDaoSupport implements TriplePartCirDao {
 
+	/**
+	 * @param triplePartCir
+	 * @brief Add method
+	 */
 	public void addTriplePartCir(TriplePartCir triplePartCir) {
 		
 		this.getHibernateTemplate().save(triplePartCir);
 		
 	}
 
+	/**
+	 * @param clazz
+	 * @param serializable
+	 * @brief Delete method
+	 * 
+	 */
 	public void deleteTriplePartCir(Class clazz, Serializable serializable) {
 		
 		TriplePartCir triplePartCir = (TriplePartCir) this.getHibernateTemplate().load(clazz, serializable);
@@ -29,6 +46,12 @@ public class TriplePartCirDaoImpl extends HibernateDaoSupport implements TripleP
 		
 	}
 
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Get next part by analysing the current part sequence.
+	 * @return A list of object arrays.
+	 */
 	public List getNextPart(String[] userCir, double value) {
 		
 		Session session = null;
@@ -42,6 +65,8 @@ public class TriplePartCirDaoImpl extends HibernateDaoSupport implements TripleP
 			query.setString ("partName1", userCir[0]);
 			query.setString("partName2", userCir[1]);
 			query.setDouble("value", value);
+			query.setFirstResult(0);
+			query.setMaxResults(5);
 			
 			List list = query.list();
 			transaction.commit();
@@ -61,6 +86,12 @@ public class TriplePartCirDaoImpl extends HibernateDaoSupport implements TripleP
 		}
 	}
 	
+	/**
+	 * @param userCir
+	 * @param value
+	 * @return A list of object arrays.
+	 * @brief Get the next part by analysing the current part sequence and the type of parts.
+	 */
 	public List getNextPart (String[] userCir, String type, double value){
 		
 		Session session = null;
@@ -98,6 +129,12 @@ public class TriplePartCirDaoImpl extends HibernateDaoSupport implements TripleP
 		
 	}
 
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Check the current part sequence.
+	 * @return true, false
+	 */
 	public boolean isTrue(String[] userCir, double value) {
 		
 		Session session = null;

@@ -24,7 +24,7 @@ Correction::Correction()
 
 std::string cresultStr = "";
 
-size_t cprocessHTTPRes(void* buffer, size_t size, size_t nmenb, void* stream){
+size_t cprocessHTTPRes(void* buffer, size_t size, size_t nmenb, void* /*stream*/){
     cresultStr += (char*)buffer;
     //qDebug() << QString::fromStdString(resultStr) << endl;
 

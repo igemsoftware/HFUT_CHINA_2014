@@ -13,14 +13,30 @@ import com.sanmixy.dao.TwinsPartDao;
 import com.sanmixy.model.Twins;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief TwinsPart DAO implements
+ *
+ */
 public class TwinsPartDaoImpl extends HibernateDaoSupport implements TwinsPartDao{
 
+	/**
+	 * @param twins
+	 * @brief Add method
+	 */
 	public void addTwinsPart(Twins twins) {
 		
 		this.getHibernateTemplate().save(twins);
 		
 	}
 
+	/**
+	 * @param clazz
+	 * @param serializable
+	 * @brief Delete method
+	 */
 	public void deleteTwinsPart(Class clazz, Serializable serializable) {
 		
 		Twins t = (Twins) this.getHibernateTemplate().get(clazz, serializable);
@@ -29,6 +45,11 @@ public class TwinsPartDaoImpl extends HibernateDaoSupport implements TwinsPartDa
 		
 	}
 
+	/**
+	 * @param wholoName
+	 * @brief Find the twins of a part.
+	 * @return A list of object arrays.
+	 */
 	public List findTwinsByBasePartName(String wholeName) {
 		
 		Session session = null;

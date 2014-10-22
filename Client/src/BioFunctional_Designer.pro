@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     correction.cpp \
     biobricklistview.cpp \
     designpanel.cpp \
-    search.cpp
+    search.cpp \
+    userhistory.cpp
 
 HEADERS  += widget.h \
     recommendation.h \
     correction.h \
     biobricklistview.h \
     designpanel.h \
-    search.h
+    search.h \
+    userhistory.h
 
 FORMS += \
     form.ui
@@ -33,5 +35,19 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-LIBS += -L /usr/local/lib -lcurl
-INCLUDEPATH += -I /usr/local/Cellar/boost/1.55.0_2/include
+ICON = BioFunctionalDesigner.icns
+
+macx {
+    LIBS += -L /usr/local/lib -lcurl
+    INCLUDEPATH += -I /usr/local/Cellar/boost/1.55.0_2/include
+}
+
+win32 {
+    LIBS += -lcurldll
+
+    OTHER_FILES += \
+        bifunctional.rc
+
+    RC_FILE = \
+        bifunctional.rc
+}

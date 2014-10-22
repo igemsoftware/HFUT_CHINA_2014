@@ -9,8 +9,20 @@ import java.io.IOException;
 
 import com.sanmixy.http.GetSample;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief Scan all data into buffer and then it will collect all the information from website
+ *
+ */
 public class Handle {
 	
+	/**
+	 * @brief Scan data, and collect the data information from website
+	 * @exception FileNotFoundException IOException
+	 * 
+	 */
 	public static void getAllSamplesFromData (){
 		BufferedReader br = null;
 		BufferedWriter bw = null;
@@ -28,7 +40,6 @@ public class Handle {
 			while (null != (temp = br.readLine())){
 				String [] line = temp.split(" ");
 				for (String str : line){
-					System.out.println(str);
 					GetSample.getData(str);
 				}
 			}

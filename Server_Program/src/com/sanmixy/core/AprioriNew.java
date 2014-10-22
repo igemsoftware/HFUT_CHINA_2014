@@ -12,19 +12,40 @@ import java.util.Set;
 
 import com.sanmixy.utils.CommonUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief Find the relation among parts.
+ */
 public class AprioriNew {
 
+	/**< The br is used to create a BufferedReader, so that the program can get data from files*/
 	private static BufferedReader br;
+	
+	/**< The bws is a BufferedWriter Array to write */
 	private static BufferedWriter[] bws;
+	
+	/**< The File name array */
 	private static String [] targetFilesNames;
+	
+	/**< The File array used to save the relation of parts */
 	private static File [] targetFiles;
+	
+	/**< The source file */
 	private static String sourceFile;
 	
-	private String [][] cirs;//gene cirs
+	private String [][] cirs;
+	
+	/**< The hashmap array used to store the relations of parts */
 	private static HashMap [] maps;
 
+	/**< Min support value */
 	private static final double []support;
 	
+	/**
+	 * @brief Initial data.
+	 */
 	static {
 		support = new double [] {0.001, 0.0005, 0.0001, 0.00001, 0.00001};
 		
@@ -59,7 +80,11 @@ public class AprioriNew {
 	}
 	
 	
-	
+	/**
+	 * @brief Construct function
+	 * @param cirs
+	 * @return A AprioriNew object.
+	 */
 	public AprioriNew (String[][] cirs){
 		
 		this.cirs = new String[2568][];
@@ -73,8 +98,8 @@ public class AprioriNew {
 	}
 
 	/**
-	 * @fucntion scan data from files
-	 * it works
+	 * @brief scan data from files
+	 * @exception IOException
 	 */
 	public void scan (){
 		
@@ -109,6 +134,7 @@ public class AprioriNew {
 	 * 
 	 * @param map
 	 * @param key
+	 * @brief Add Item to map. Check whether the map contains the key or not.
 	 */
 	public void addItem (HashMap <String, Double> map, String key){
 		
@@ -122,6 +148,9 @@ public class AprioriNew {
 			
 	}
 	
+	/**
+	 * @brief Get the single items from the source sequence and put them into the map
+	 */
 	public void getSingleItemMap (){
 		
 		for (int index = 1; index <= cirs.length; index ++){
@@ -137,6 +166,9 @@ public class AprioriNew {
 		}
 	}
 	
+	/**
+	 * @brief Get the double items from the source sequence and add them into the map.
+	 */
 	public void getDoubleItemMap (){
 		
 		for (int index = 1; index <= cirs.length; index ++){
@@ -156,6 +188,9 @@ public class AprioriNew {
 		}
 	}
 	
+	/**
+	 * @brief Get the triple parts items from the source sequence and add them into the map.
+	 */
 	public void getTripleItemMap (){
 		
 		for (int index = 1; index <= cirs.length; index ++){
@@ -177,6 +212,9 @@ public class AprioriNew {
 			
 	}
 	
+	/**
+	 * @brief Get the quedra parts items from the source sequence and add them into the map.
+	 */
 	public void getQuadraItemMap (){
 		
 		for (int index = 1; index <= cirs.length; index ++){
@@ -198,6 +236,9 @@ public class AprioriNew {
 		}
 	}
 	
+	/**
+	 * @brief Get the penta parts items from the source sequence and add them into the map.
+	 */
 	public void getPentaItemMap (){
 		
 		for (int index = 1; index <= cirs.length; index ++){
@@ -220,6 +261,13 @@ public class AprioriNew {
 		}
 	}
 	
+	/**
+	 * @brief Calculate the strength of the relations
+	 * @param sum
+	 * @param entries
+	 * @param map
+	 * @param index
+	 */
 	public void setProb (int sum,
 						 Set <Entry <String, Double>> entries,
 						 HashMap <String, Double> map,
@@ -233,19 +281,24 @@ public class AprioriNew {
 			
 			String key = entry.getKey();
 			
-			if (prob >= support[index-1])
-				
-				map.put(key, prob);
+//			if (prob >= support[index-1])
+//				
+//				map.put(key, prob);
+//			
+//			else
+//				
+//				map.put(key, (double) 0);
 			
-			else
-				
-				map.put(key, (double) 0);
+			map.put(key, prob);
 			
 			
 		}
 		
 	}
 	
+	/**
+	 * @brief Get the strength of these items.
+	 */
 	public void getProbOfItems (){
 		
 		for (int index = 1; index <= maps.length; index ++){
@@ -262,6 +315,9 @@ public class AprioriNew {
 		
 	}
 	
+	/**
+	 * @brief Get the sum of each type of relation
+	 */
 	public int getSum (int index){
 		
 		int sum = 0;
@@ -312,6 +368,10 @@ public class AprioriNew {
 	}
 	
 	
+	/**
+	 * @brief Print data.
+	 * @param map
+	 */
 	public void show (HashMap <String, Double> map){
 		
 		Set <Entry <String, Double>> entries = map.entrySet();
@@ -323,6 +383,9 @@ public class AprioriNew {
 		}
 	}
 	
+	/**
+	 * @brief Put the rules into the files
+	 */
 	public void export (){
 		
 		for (int i = 1; i <= maps.length; i ++){
@@ -343,6 +406,9 @@ public class AprioriNew {
 		}
 	}
 	
+	/**
+	 * @brief Pack all the operations together.
+	 */
 	public void func (){
 		
 		scan ();

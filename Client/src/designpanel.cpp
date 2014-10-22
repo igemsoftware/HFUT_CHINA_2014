@@ -11,6 +11,7 @@
 #include "recommendation.h"
 #include "biobricklistview.h"
 #include "correction.h"
+#include "userhistory.h"
 #include <QApplication>
 #include <QMimeData>
 #include <QDrag>
@@ -71,7 +72,7 @@ void DesignPanel::mousePressEvent(QMouseEvent* event){
                 return;
             }
             QStringList infos = m_recommendBioBrickNames.at(index).split("|");
-            QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\" "
+            QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\""
                     + infos.at(2) + "\">InfoPage</a>";
 
             emit infoActived(info);
@@ -81,7 +82,7 @@ void DesignPanel::mousePressEvent(QMouseEvent* event){
         } else if (cursorItem){
             int index = this->row(cursorItem);
             QStringList infos = m_biobrickNames.at(index).split("|");
-            QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\" "
+            QString info = "<p>Name: " + infos.at(0) + "</p> <p>Type: " + infos.at(1) + "</p> <p>URL: <a href=\""
                     + infos.at(2) + "\">InfoPage</a>";
             //qDebug() << info << endl;
             emit infoActived(info);
@@ -239,7 +240,7 @@ void DesignPanel::insertBioBrick(int index, const QString &name){
 
 QImage* DesignPanel::getResultImage(const QString& function){
     //qDebug() << function << endl;
-    QImage* image = new QImage(QSize(200*m_biobrickNames.size() + 10, 130), QImage::Format_ARGB32);
+    QImage* image = new QImage(QSize(220*m_biobrickNames.size() + 10, 130), QImage::Format_ARGB32);
     QPainter painter(image);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(QColor(255, 255, 255));
@@ -328,7 +329,7 @@ void DesignPanel::showRecommend(){
         layout->addWidget(label);
     }
     labelContainer->setLayout(layout);
-    qDebug() << biobrickCount << endl;
+    //qDebug() << biobrickCount << endl;
     item->setSizeHint(QSize(177, 40*biobrickCount));
     item->setWhatsThis("recommend");
     addItem(item);
@@ -340,7 +341,7 @@ void DesignPanel::showRecommend(){
 void DesignPanel::performRecommend(){
     //dresultString.clear();
     QStringList parma;
-    int index = currentIndex().row();
+    //int index = currentIndex().row();
     int biobrickCount = m_biobrickNames.size();
     if (biobrickCount <=5){
         for (int i = 0; i < biobrickCount; i++){
@@ -479,6 +480,8 @@ void DesignPanel::addBioBrick(QString biobrick){
     setItemWidget(item, labelContainer);
     m_biobrickNames.push_back(biobrick);
     //showCheck(Correction::doCorrection(m_biobrickNames));
+    UserHistory::sendUserInput(infos.at(0));
+    emit biobrickadded();
 }
 
 

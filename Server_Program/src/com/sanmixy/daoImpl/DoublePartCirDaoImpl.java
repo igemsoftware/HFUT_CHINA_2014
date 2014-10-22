@@ -13,14 +13,30 @@ import com.sanmixy.dao.DoublePartCirDao;
 import com.sanmixy.model.DoublePartCir;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief DoublePartCir DAO implements
+ *
+ */
 public class DoublePartCirDaoImpl extends HibernateDaoSupport implements DoublePartCirDao{
 
+	/**
+	 * @brief Add method
+	 * @param doublePartCir
+	 */
 	public void addDoublePartCir(DoublePartCir doublePartCir) {
 		
 		this.getHibernateTemplate().save(doublePartCir);
 		
 	}
 
+	/**
+	 * @param serializable
+	 * @param clazz
+	 * @brief Delete method
+	 */
 	public void deleteDoublePartCir(Class clazz, Serializable serializable) {
 		
 		DoublePartCir doublePartCir = (DoublePartCir) this.getHibernateTemplate().load(clazz, serializable);
@@ -29,6 +45,14 @@ public class DoublePartCirDaoImpl extends HibernateDaoSupport implements DoubleP
 		
 	}
 
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Get next part by analysis of the current part sequence
+	 * 
+	 * Create Hibernate session and transaction,then create hiberate query object
+	 * and execute the HQL query to get answer.
+	 */
 	public List getNextPart(String userCir, double value) {
 		
 		Session session = null;
@@ -61,6 +85,14 @@ public class DoublePartCirDaoImpl extends HibernateDaoSupport implements DoubleP
 		}
 	}
 	
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Get next part by analysis of the current part sequence
+	 * 
+	 * Create Hibernate session and transaction,then create hiberate query object
+	 * and execute the HQL query to get answer.
+	 */
 	public List getNextPart (String userCir, String type, double value){
 		
 		Session session = null;
@@ -97,6 +129,12 @@ public class DoublePartCirDaoImpl extends HibernateDaoSupport implements DoubleP
 		
 	}
 
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Check whether the part sequence is true or not
+	 * @return true, false
+	 */
 	public boolean isTrue(String[] userCir, double value) {
 		
 		Session session = null;

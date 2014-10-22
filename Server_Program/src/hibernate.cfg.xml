@@ -9,11 +9,11 @@
 		
 		<property name="hibernate.connection.url">jdbc:mysql://localhost/BioDesigner</property>
 		
-		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.username"></property>
 		
-		<property name="hibernate.connection.password">x</property>
+		<property name="hibernate.connection.password"></property>
 		
-		<property name="hibernate.connection.pool_size">5</property>
+		<property name="hibernate.connection.pool_size">50</property>
 		
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		

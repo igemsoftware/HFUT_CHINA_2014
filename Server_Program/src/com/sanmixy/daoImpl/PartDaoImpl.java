@@ -14,14 +14,30 @@ import com.sanmixy.dao.PartDao;
 import com.sanmixy.model.Part;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief Part DAO implements
+ *
+ */
 public class PartDaoImpl extends HibernateDaoSupport implements PartDao{
 
+	/**
+	 * @param part
+	 * @brief Add method
+	 */
 	public void addPart(Part part) {
 		
 		this.getHibernateTemplate().save(part);
 		
 	}
 
+	/**
+	 * @param clazz
+	 * @param serializable
+	 * @brief Delete method
+	 */
 	public void deletePart(Class clazz, Serializable serializable) {
 		
 		Part part = (Part) this.getHibernateTemplate().load(clazz, serializable);
@@ -30,6 +46,11 @@ public class PartDaoImpl extends HibernateDaoSupport implements PartDao{
 		
 	}
 
+	/**
+	 * @param serializable
+	 * @brief Find part by record id
+	 * @return A list of parts.
+	 */
 	public Part findPartByID(Serializable serializable) {
 		
 		Part part = (Part) this.getHibernateTemplate().get(Part.class, serializable);
@@ -39,7 +60,11 @@ public class PartDaoImpl extends HibernateDaoSupport implements PartDao{
 	}
 	
 	
-
+	/**
+	 * @param partID
+	 * @brief Find part by part id
+	 * @return part
+	 */
 	public Part findPartByPartID(int partID) {
 		
 		Session session = null;
@@ -78,6 +103,11 @@ public class PartDaoImpl extends HibernateDaoSupport implements PartDao{
 		}
 	}
 
+	/**
+	 * @param wholeName
+	 * @brief Find part by a whole name
+	 * @return part
+	 */
 	public Part findPartByWholePartName(String wholeName) {
 		
 		Session session = null;
@@ -115,6 +145,11 @@ public class PartDaoImpl extends HibernateDaoSupport implements PartDao{
 		
 	}
 
+	/**
+	 * @param partName
+	 * @brief Find part by a name string.
+	 * @return A list of parts.
+	 */
 	public List findPartByPartName(String partName) {
 		
 		Session session = null;
@@ -148,5 +183,44 @@ public class PartDaoImpl extends HibernateDaoSupport implements PartDao{
 		
 	}
 
+	/**
+	 * @param type
+	 * @param num
+	 * @brief Find a certain type of type
+	 * @return A list of parts.
+	 */
+	public List findPartByType (String type, int num){
+		
+		Session session = null;
+		Transaction transaction = null;
+		
+		try {
+			session = HibernateUtils.getSession();
+			transaction = session.beginTransaction();
+			
+			Query query = session.createQuery("From Part part where part.type=:type");
+			query.setString("type", type);
+			query.setFirstResult(0);
+			if (num > 0){
+				query.setMaxResults(num);
+			}
+			
+			List list = query.list();
+			transaction.commit();
+			
+			return list;
+		} catch (HibernateException e) {
+			transaction.rollback();
+			
+			e.printStackTrace();
+			
+			return null;
+		} finally {
+			
+			HibernateUtils.closeSession(session);
+			
+		}
+		
+	}
 	
 }

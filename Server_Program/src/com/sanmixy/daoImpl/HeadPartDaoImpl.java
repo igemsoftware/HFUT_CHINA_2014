@@ -13,13 +13,30 @@ import com.sanmixy.dao.HeadPartDao;
 import com.sanmixy.model.HeadPart;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @vesion 1.0
+ * @brief HeadPart DAO implements
+ *
+ */
 public class HeadPartDaoImpl extends HibernateDaoSupport implements HeadPartDao {
 
+	/**
+	 * @brief Add method
+	 * @param head
+	 * 
+	 */
 	public void addHeadPart(HeadPart head) {
 		
 		this.getHibernateTemplate().save(head);
 	}
 
+	/**
+	 * @param clazz
+	 * @param serializable
+	 * @brief Delete method
+	 */
 	public void deleteHeadPart(Class clazz, Serializable serializable) {
 		
 		HeadPart headPart = (HeadPart) this.getHibernateTemplate().get(clazz, serializable);
@@ -29,7 +46,9 @@ public class HeadPartDaoImpl extends HibernateDaoSupport implements HeadPartDao 
 	}
 
 	/**
-	 * @return Object array of Part and HeadPart
+	 * @param value
+	 * @brief Get the head node of a sequence.
+	 * @return A list of parts
 	 */
 	public List getHeadPart(double value) {
 		
@@ -62,6 +81,11 @@ public class HeadPartDaoImpl extends HibernateDaoSupport implements HeadPartDao 
 		}
 	}
 	
+	/**
+	 * @param type
+	 * @brief Get the certain type of head node 
+	 * @return A list of head parts
+	 */
 	public List getHeadPart (String type, double value){
 		
 		Session session = null;
@@ -96,6 +120,12 @@ public class HeadPartDaoImpl extends HibernateDaoSupport implements HeadPartDao 
 		}
 	} 
 
+	/**
+	 * @param partName
+	 * @param value
+	 * @brief Check whether the sequence is true or not
+	 * @return true, false
+	 */
 	public boolean isTrue(String partName, double value) {
 		
 		Session session = null;

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="com.sanmixy.model">
+	
+	<class name="QuadraPartCir"
+		   table="QUADRAPARTCIR"
+		   lazy="true"
+		   dynamic-insert="true"
+		   dynamic-update="true"
+		   >
+		   
+		<id name="id"
+			column="ID"
+			type="integer"
+			>
+		
+			<generator class="native"/>
+				
+		</id>
+		
+		<many-to-one name="first"/>
+		
+		<many-to-one name="second"/>
+		
+		<many-to-one name="third"/>
+		
+		<many-to-one name="forth"/>
+				  
+		<property name="con"
+				  column="CON"
+				  type="double"
+				  not-null="true"
+				  unique="false"
+				  />
+		 
+	</class>
+</hibernate-mapping>

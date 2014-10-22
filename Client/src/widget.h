@@ -10,6 +10,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QTcpSocket>
 
 
 #include "correction.h"
@@ -52,6 +53,12 @@ public slots:
     /// \param info the biobrick's info
     void showBioBrickInfo(QString info);
 
+    void serverConnected();
+
+    void serverDisconnected();
+
+    void showUserHistory();
+
 protected:
     void keyPressEvent(QKeyEvent *e);
 
@@ -61,6 +68,7 @@ private:
     QString m_filePath;
     QFile* m_projectFile;
     bool m_isCheckable;
+    QTcpSocket* client;
 
     /// \brief save the project
     void saveProject();
@@ -70,6 +78,8 @@ private:
     void readProject();
     /// \brief clean the widget
     void cleanWidget();
+
+
 
 
     /// \brief do the search

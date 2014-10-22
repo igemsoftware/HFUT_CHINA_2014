@@ -13,13 +13,29 @@ import com.sanmixy.dao.PentaPartCirDao;
 import com.sanmixy.model.PentaPartCir;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief PentaPartCir DAO implements
+ *
+ */
 public class PentaPartCirDaoImpl extends HibernateDaoSupport implements PentaPartCirDao{
 
+	/**
+	 * @param pentaPartCir
+	 * @brief Add method
+	 */
 	public void addPentaPartCir(PentaPartCir pentaPartCir) {
 		
 		this.getHibernateTemplate().save(pentaPartCir);
 	}
 
+	/**
+	 * @param clazz
+	 * @param serializable
+	 * @brief Delete method
+	 */
 	public void deletePentaPartCir(Class clazz, Serializable serializable) {
 		
 		PentaPartCir pentaPartCir = (PentaPartCir) this.getHibernateTemplate().load(clazz, serializable);
@@ -29,6 +45,12 @@ public class PentaPartCirDaoImpl extends HibernateDaoSupport implements PentaPar
 		
 	}
 	
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Get the next part by analysing the current part sequence
+	 * @return A list of parts.
+	 */
 	public List getNextPart(String[] userCir, double value) {
 		Session session = null;
 		Transaction transaction = null;
@@ -64,7 +86,12 @@ public class PentaPartCirDaoImpl extends HibernateDaoSupport implements PentaPar
 		}
 		
 	}
-
+	/**
+	 * @param userCir
+	 * @param value
+	 * @brief Get the next part by analysing the current part sequence and the type of parts
+	 * @return A list of parts.
+	 */
 	public List getNextPart (String[] userCir, String type, double value){
 		
 		Session session = null;
@@ -101,6 +128,12 @@ public class PentaPartCirDaoImpl extends HibernateDaoSupport implements PentaPar
 		}
 	}
 	
+	/**
+	 * @param userCir
+	 * @param value 
+	 * @brief Check whether the sequence is true or not
+	 * @return true, false
+	 */
 	public boolean isTrue(String[] userCir, double value) {
 		Session session = null;
 		Transaction transaction = null;

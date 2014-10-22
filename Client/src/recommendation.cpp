@@ -83,7 +83,7 @@ std::string Recommendation::getRequestUrl(const QString &requestType, const QStr
     return url;
 }
 
-size_t dprocessHTTPRes(void* buffer, size_t size, size_t nmenb, void* stream){
+size_t dprocessHTTPRes(void* buffer, size_t size, size_t nmenb, void* /*stream*/){
     dresultStr += (char*)buffer;
     //qDebug() << QString::fromStdString(resultStr) << endl;
 

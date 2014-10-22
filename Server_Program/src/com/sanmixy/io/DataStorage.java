@@ -36,22 +36,40 @@ import com.sanmixy.model.Twins;
 import com.sanmixy.utils.CommonUtils;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief Insert all the data into database.
+ *
+ */
 public class DataStorage {
 	
+	/**< A spring BeanFactory, Which will offer all the DAO object to you. */
 	private static BeanFactory beanFactory;
 	
+	/**
+	 * @brief Initial the beanFactory.
+	 */
 	static {
 		
 		beanFactory = new ClassPathXmlApplicationContext("applicationContext-*.xml");
 		
 	}
 
+	/**
+	 * @breif Scan data from xml files and insert into PART table.
+	 */
 	public void partStore() {
 
 		new IXMLReader().func();
 
 	}
 
+	/**
+	 * @brief Insert all the rules into database, include the relations of all parts.
+	 * @exception FileNotFoundException
+	 */
 	public void rulesStore() {
 
 		BufferedReader [] brs = new BufferedReader [5];
@@ -79,11 +97,22 @@ public class DataStorage {
 		
 	}
 	
+	/**
+	 * @param br(BufferedReader)
+	 * @exception NumberFormatException, IOException
+	 * @brief Insert the rules of head nodes in a part sequence.
+	 * 
+	 *  Scan data from files, and create the object that you want to save. 
+	 *  Use the setter to initial all the attributes,And then use the dao 
+	 *  object to save it.
+	 */
 	public void headPartStore (BufferedReader br){
 		
 		String temp = null;
 		
 		PartDao partDao = (PartDao)beanFactory.getBean("partDao");
+		
+		/**< Create a dao object with beanFactory object*/
 		HeadPartDao headPartDao = (HeadPartDao)beanFactory.getBean("headPartDao");
 		
 		try {
@@ -112,6 +141,14 @@ public class DataStorage {
 		}
 	}
 	
+	/**
+	 * @exception NumberFormatException, IOException
+	 * @param br (BufferedReader)
+	 * @brief Insert the rules between two parts into database
+	 * 
+	 * Create the DoublePartCir object, and initial all the attributes, 
+	 * then ues the DAO object to save it. 
+	 */
 	public void doublePartCirStore (BufferedReader br){
 		
 		String temp = null;
@@ -144,6 +181,14 @@ public class DataStorage {
 		}
 	}
 	
+	/**
+	 * @exception NumberFormatException, IOException
+	 * @param br (BufferedReader)
+	 * @brief Insert the rules among three parts into database
+	 * 
+	 * Create the TriplePartCir object, and initial all the attributes, 
+	 * then ues the DAO object to save it. 
+	 */
 	public void triplePartCirStore (BufferedReader br){
 		
 		PartDao partDao = (PartDao) beanFactory.getBean("partDao");
@@ -175,6 +220,14 @@ public class DataStorage {
 		}
 	}
 	
+	/**
+	 * @exception NumberFormatException, IOException
+	 * @param br (BufferedReader)
+	 * @brief Insert the rules among four parts into database
+	 * 
+	 * Create the QuadraPartCir object, and initial all the attributes, 
+	 * then ues the DAO object to save it. 
+	 */
 	public void quadraPartCirStore (BufferedReader br){
 		
 		QuadraPartCirDao quadraPartCirDao = (QuadraPartCirDao) beanFactory.getBean("quadraPartCirDao");
@@ -215,6 +268,14 @@ public class DataStorage {
 		}
 	}
 	
+	/**
+	 * @exception NumberFormatException, IOException
+	 * @param br (BufferedReader)
+	 * @brief Insert the rules among five parts into database
+	 * 
+	 * Create the PentaPartCir object, and initial all the attributes, 
+	 * then ues the DAO object to save it. 
+	 */
 	public void pentaPartCirStore (BufferedReader br){
 		
 		PentaPartCirDao pentaPartCirDao = (PentaPartCirDao) beanFactory.getBean("pentaPartCirDao");
@@ -252,6 +313,13 @@ public class DataStorage {
 		}
 	}
 
+	/**
+	 * @exception IOException
+	 * @brief Insert the device data into database
+	 * 
+	 * Create a device object, and initial all the attributes,
+	 * then save it by using device DAO object 
+	 */
 	public void deviceStore() {
 		
 		BufferedReader br = CommonUtils.getBufferedReader ("./source/allDevice(stage1).data");
@@ -271,33 +339,17 @@ public class DataStorage {
 				
 				Part p = (Part) partDao.findPartByWholePartName(line[0]);
 				if (p == null){
-					System.out.println();
-					System.out.println("********");
-					System.out.println(index);
-					System.out.println("********");
-					System.out.println();
 					continue;
 				}
 				if (deviceDao.isDeviceExist(p.getPartName()) || 
 					deviceDao.isSeqExist(line[1])){
-					System.out.println();
-					System.out.println("********");
-					System.out.println(index);
-					System.out.println("********");
-					System.out.println();
 					continue;
 				}
 				Device device = new Device ();
 				device.setDevice(p);
 				device.setPart_seq(line[1]);
-				System.out.println(line[0]);
-				
-				deviceDao.addDevice(device);
-				System.out.println();
-				System.out.println("********");
-				System.out.println(index);
-				System.out.println("********");
-				System.out.println();
+				if (device.getPart_seq().length() <= 255)
+					deviceDao.addDevice(device);
 				
 			}
 		} catch (IOException e) {
@@ -307,6 +359,14 @@ public class DataStorage {
 		
 	}
 
+	/**
+	 * @exception DocumentException
+	 * @param temp
+	 * @brief Insert twin data into database
+	 * 
+	 * Create a xml reader, and get the twin data of a part which is giving in the parameter,
+	 * then save all the twins by DAO object.
+	 */
 	public void twinsStore(String temp) {
 
 		SAXReader saxReader = new SAXReader();
@@ -346,50 +406,10 @@ public class DataStorage {
 					System.out.println(twinElement.getText());
 
 					if (q == null) {
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println(twinElement.getText());
 						new GetSample().getData(twinElement.getText());
 						new IXMLReader()
 								.func(part.elementText(twinElement.getText()));
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
-						System.out.println();
+						
 					}
 						
 					q = partDao.findPartByWholePartName(twinElement.getText());
@@ -405,6 +425,14 @@ public class DataStorage {
 	}
 	
 
+	/**
+	 * @exception DocumentException
+	 * @param temp
+	 * @brief Insert twin data into database
+	 * 
+	 * Create a xml reader, and get the twin data of a part,
+	 * then save all the twins by DAO object.
+	 */
 	public void twinsStore() {
 
 		SAXReader saxReader = new SAXReader();
@@ -433,10 +461,6 @@ public class DataStorage {
 			Element root = document.getRootElement();
 			Element partList = root.element("part_list");
 			Element part = partList.element("part");
-			System.out.println("!!!!!!!!!***********************");
-			System.out.println("!!!!!!!!!!!****************"
-					+ fileNames[index - 1]);
-			System.out.println("!!!!!!!!!***********************");
 
 			if (part != null) {
 				if (part.element("twins") != null) {
@@ -455,50 +479,9 @@ public class DataStorage {
 						System.out.println(twinElement.getText());
 
 						if (q == null) {
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println(twinElement.getText());
 							new GetSample().getData(twinElement.getText());
 							new IXMLReader()
 									.func(part.elementText(twinElement.getText()));
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
-							System.out.println();
 						}
 						
 						q = partDao.findPartByWholePartName(twinElement

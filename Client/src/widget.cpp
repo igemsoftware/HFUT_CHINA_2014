@@ -10,6 +10,7 @@
 
 #include "widget.h"
 #include "search.h"
+#include "userhistory.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
@@ -23,6 +24,8 @@
 #include <QStringList>
 #include <QFileDevice>
 #include <QRegExp>
+#include <QDesktopServices>
+#include <QHostAddress>
 
 #include <curl/curl.h>
 #include <boost/property_tree/ptree.hpp>
@@ -41,6 +44,8 @@ Widget::Widget(QWidget *parent)
 #endif
     m_projectFile = new QFile(m_filePath + m_projectName + ".bd");
     ui->setupUi(this);
+    client = new QTcpSocket;
+
     setFixedSize(1200, 760);
     //connect(ui->checkButton, SIGNAL(clicked()), this, SLOT(checkButtonClicked()));
     connect(ui->saveButton, SIGNAL(clicked()), this, SLOT(saveButtonClicked()));
@@ -51,25 +56,76 @@ Widget::Widget(QWidget *parent)
     connect(ui->desginPanel, SIGNAL(relevantActived(QStringList*)), this, SLOT(showRelevantBioBricks(QStringList*)));
     connect(ui->desginPanel, SIGNAL(infoActived(QString)), this, SLOT(showBioBrickInfo(QString)));
     connect(ui->brickList, SIGNAL(infoActived(QString)), this, SLOT(showBioBrickInfo(QString)));
+    connect(ui->desginPanel, SIGNAL(biobrickadded()), this, SLOT(showUserHistory()));
+    connect(client, SIGNAL(connected()), this, SLOT(serverConnected()));
+    connect(client, SIGNAL(disconnected()), this, SLOT(serverDisconnected()));
     ui->brickInput->setPlaceholderText("Search BioBrick");
     ui->functionInput->setPlaceholderText("Input Function");
     ui->functionInput->setFixedSize(200,30);
     ui->brickInput->setFixedSize(229, 36);
-    ui->biobrickInfo->setOpenExternalLinks(true);
     ui->biobrickInfo->setWordWrap(false);
-    //ui->biobrickInfo->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    ui->biobrickInfo->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);
+    ui->biobrickInfo->setOpenExternalLinks(true);
     ui->biobrickInfo->setTextFormat(Qt::RichText);
     //ui->brickList->setFixedSize(250, 450);
 
-    ui->recomendBrick->setFixedHeight(151);
+    ui->historys->setFixedHeight(151);
     ui->saveButton->setFixedSize(60, 25);
     //ui->checkButton->setFixedSize(60, 25);
     ui->openButton->setFixedSize(60, 25);
     ui->newButton->setFixedSize(60, 25);
     ui->exportButton->setFixedSize(60, 25);
-    ui->recomendBrick->setFocusPolicy(Qt::NoFocus);
+    ui->historys->setFocusPolicy(Qt::NoFocus);
     setWindowTitle(m_projectName + "-" + "BioFunctional Designer");
     ui->functionInput->setFocus();
+    client->connectToHost(QHostAddress("http://210.45.250.5"), 8080);
+    client->startTimer(5);
+    if (client->isValid() ){
+        ui->statusLabel->setText("Connected");
+    }else{
+        ui->statusLabel->setText("Disconnected");
+    }
+    UserHistory::getUserHistory();
+    ui->historys->setSpacing(10);
+    ui->historys->setViewMode(QListView::IconMode);
+    ui->historys->setWrapping(false);
+    ui->historys->setFlow(QListView::LeftToRight);
+    ui->historys->setMouseTracking(true);
+
+    ui->historys->setAlternatingRowColors(false);
+    showUserHistory();
+
+}
+
+void Widget::showUserHistory(){
+    ui->historys->clear();
+    QStringList* history = UserHistory::getUserHistory();
+    if (history == NULL){
+        return;
+    }
+
+    for (int i = 0; i < history->size(); i++){
+        QListWidgetItem* item = new QListWidgetItem();
+        QWidget* labelContainer = new QWidget();
+        QVBoxLayout* layout = new QVBoxLayout();
+        QLabel* label = new QLabel();
+        QStringList infos = history->at(i).split("|");
+        QString tips = "Name: " + infos.at(0) + "\nType: " + infos.at(1) + "\nURL: " + infos.at(2);
+        label->setProperty("recommendBioBrick", true);
+        label->setToolTip(tips);
+        QString name = infos.at(0);
+        label->setText(name);
+        label->setFixedSize(167, 29);
+        label->setAlignment(Qt::AlignCenter);
+        layout->addWidget(label);
+        labelContainer->setLayout(layout);
+        //qDebug() << biobrickCount << endl;
+        item->setSizeHint(QSize(177, 40));
+        item->setWhatsThis("recommend");
+        ui->historys->addItem(item);
+        ui->historys->setItemWidget(item, labelContainer);
+    }
+
 }
 
 Widget::~Widget()
@@ -84,7 +140,7 @@ void Widget::keyPressEvent(QKeyEvent *e){
     }
 }
 
-void Widget::searchBoxTyped(QString text){
+void Widget::searchBoxTyped(QString /*text*/){
     ui->brickList->cleanList();
     performSearch();
 }
@@ -217,79 +273,12 @@ void Widget::showBioBrickInfo(QString info){
     ui->biobrickInfo->setText(info);
 }
 
-/*
-
-size_t processHTTPRes(void* buffer, size_t size, size_t nmenb, void* stream){
-    resultString += (char*)buffer;
-    //qDebug() << QString::fromStdString(resultString) << endl;
-
-    return size* nmenb;
+void Widget::serverConnected(){
+    //qDebug()<< "connected" << endl;
+    ui->statusLabel->setText("Connected");
 }
 
-QStringList Widget::getReslutList(const QString &requestType, const QStringList &prama){
-    std::string url = getRequestUrl(requestType, prama);
-    CURL* curl;
-    CURLcode res;
-    struct curl_slist* headers = NULL;
-    headers = curl_slist_append(headers, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8");
-    headers = curl_slist_append(headers, "Accept-Encoding:	gzip, deflate");
-    headers = curl_slist_append(headers, "Accept-Language:	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3");
-    headers = curl_slist_append(headers, "Connection:	keep-alive");
-    headers = curl_slist_append(headers, "User-Agent:	Mozilla/5.0 Gecko/20100101 Firefox/32.0");
-
-    curl = curl_easy_init();
-    if (curl){
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_HTTPGET, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &processHTTPRes);
-        res = curl_easy_perform(curl);
-        if (res != 0) {
-
-            curl_slist_free_all(headers);
-            curl_easy_cleanup(curl);
-        }
-    }
-    return processHttpResult();
+void Widget::serverDisconnected(){
+    //qDebug()<< "disconnected" << endl;
+    ui->statusLabel->setText("Disconnected");
 }
-
-std::string Widget::getRequestUrl(const QString &requestType, const QStringList &prama){
-    std::string url = "http://210.45.250.5:8080/BioDesigner/core.jsp?requestType=" + requestType.toStdString();
-    if (requestType == "recommendation"){
-        url += "&partNum=" + QVariant(prama.size()).toString().toStdString();
-        for (int i = 0; i < prama.size(); i++){
-            url += "&partName" + QVariant(i+1).toString().toStdString() + "=" + prama.at(i).toStdString();
-        }
-    }else{
-        url += "&partName="+prama.at(0).toStdString();
-    }
-
-    //qDebug() << QString::fromStdString(url) << endl;
-    return url;
-}
-
-
-
-QStringList Widget::processHttpResult(){
-    QRegExp reg("<p>(.*)<\/p>");
-    QStringList results;
-    QString result = QString::fromStdString(resultString);
-    qDebug() << result << endl;
-    result = result.trimmed();
-    result = result.replace(QRegExp("[\t\v\s\r\n]*"), QString(""));
-    //qDebug() << result << endl;
-    int pos = 0;
-    //qDebug() << 1 << endl;
-    //qDebug() << reg.indexIn(result, 0) << endl;
-    QString biobrick;
-    while((pos = reg.indexIn(result, pos))!= -1)
-    {
-        reg.cap(0);
-        biobrick += reg.cap(1);
-        biobrick.replace(QString(" "), QString("|"));
-        pos += reg.matchedLength();
-    }
-    //qDebug() << biobrick.split("||</p>||||<p>||");
-    return biobrick.split("||</p>||||<p>||");
-}
-*/

@@ -1,53 +1,105 @@
 package com.sanmixy.model;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief It is used to describe the relations among three parts
+ *
+ */
 public class TriplePartCir {
 
+	/**< The id of a record */
 	private int id;
 	
+	/**< The strength of the relations of them */
 	private double con;
 	
+	/**< The first part of the three */
 	private Part first;
 	
+	/**< The second part of the three */
 	private Part second;
 	
+	/**< The third part of the three */
 	private Part third;
 
+	/**
+	 * @brief The getter of id
+	 * @return id (int)
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * @brief The setter of id
+	 * @param id
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	/**
+	 * @brief The getter of con
+	 * @return con (double)
+	 */
 	public double getCon() {
 		return con;
 	}
 
+	/**
+	 * @brief The setter of con
+	 * @param con
+	 */
 	public void setCon(double con) {
 		this.con = con;
 	}
 
+	/**
+	 * @brief The getter of the first part
+	 * @return first part (Part)
+	 */
 	public Part getFirst() {
 		return first;
 	}
 
+	/**
+	 * @brief The setter of the first part
+	 * @param first
+	 */
 	public void setFirst(Part first) {
 		this.first = first;
 	}
 
+	/**
+	 * @brief The getter of the second part
+	 * @return second part (Part)
+	 */
 	public Part getSecond() {
 		return second;
 	}
 
+	/**
+	 * @brief The setter of the second part
+	 * @param second
+	 */
 	public void setSecond(Part second) {
 		this.second = second;
 	}
 
+	/**
+	 * @brief The getter of the third part
+	 * @return third part(Part)
+	 */
 	public Part getThird() {
 		return third;
 	}
 
+	/**
+	 * @brief The setter of the third part
+	 * @param third
+	 */
 	public void setThird(Part third) {
 		this.third = third;
 	}

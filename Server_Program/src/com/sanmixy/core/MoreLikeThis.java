@@ -167,6 +167,12 @@ public class MoreLikeThis {
 //		return list;
 //	}
 	
+	/**
+	 * 
+	 * @brief Get the twins of a part
+	 * @param partName
+	 * @return A list of twins
+	 */
 	public List func (String partName){
 		
 		TwinsPartDao twinsPartDao = (TwinsPartDao) HibernateUtils.getBean("twinsPartDao");
@@ -176,7 +182,6 @@ public class MoreLikeThis {
 		return list;
 		
 	}
-
 	
 	
 	

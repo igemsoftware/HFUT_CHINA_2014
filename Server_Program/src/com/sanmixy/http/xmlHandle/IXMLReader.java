@@ -18,8 +18,19 @@ import com.sanmixy.model.Part;
 import com.sanmixy.model.Twins;
 import com.sanmixy.utils.HibernateUtils;
 
+/**
+ * 
+ * @author Xia Yu
+ * @version 1.0
+ * @brief A xml reader which is used to scan data from xml files.
+ * 
+ */
 public class IXMLReader {
 
+	/**
+	 * @brief Scan all the xml files and save data.
+	 * @exception Exception IOException
+	 */
 	public void func() {
 
 		SAXReader saxReader = new SAXReader();
@@ -98,6 +109,13 @@ public class IXMLReader {
 		}
 	}
 
+	/**
+	 * @brief Scan the xml data which is given and save it.
+	 * @param temp
+	 * @exception IOException Exception
+	 * 
+	 * Temp is the data which will be analysed.
+	 */
 	public void func(String temp) {
 		
 		if (temp == null)

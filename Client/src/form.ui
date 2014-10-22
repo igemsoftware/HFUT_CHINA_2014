@@ -242,6 +242,13 @@
      </spacer>
     </item>
     <item>
+     <widget class="QLabel" name="statusLabel">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
      <spacer name="horizontalSpacer_7">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -440,7 +447,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QListWidget" name="recomendBrick">
+   <widget class="QListWidget" name="historys">
     <property name="geometry">
      <rect>
       <x>2</x>
@@ -477,7 +484,7 @@
   <tabstop>exportButton</tabstop>
   <tabstop>saveButton</tabstop>
   <tabstop>relevantList</tabstop>
-  <tabstop>recomendBrick</tabstop>
+  <tabstop>historys</tabstop>
  </tabstops>
  <resources/>
  <connections/>
